@@ -7,7 +7,7 @@ import { catchError, map, mergeMap, take } from 'rxjs/operators';
 import * as KorisnikActions from './korisnik.actions';
 
 @Injectable()
-export class MarketEffect {
+export class KorisnikEffect {
   constructor(
     private korisnikService: KorisnikService,
     private actions$: Actions

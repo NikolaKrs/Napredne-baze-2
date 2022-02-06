@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Valuta } from './Models/Valuta-model';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Crypto';
+  constructor(private router: Router){}
+  ngOnInit() {
+    this.router.navigate(["valute"])
+    
+  }
+
 }

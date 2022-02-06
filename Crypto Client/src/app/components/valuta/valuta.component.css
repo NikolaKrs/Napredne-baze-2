@@ -1,0 +1,136 @@
+.cont{
+    display:flex;
+    background-color: rgba(83, 78, 78, 0.746);
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 5px;
+
+}
+.hover  :hover
+{
+    background-color: rgba(83, 78, 78, 0.925);
+}
+.hover{
+    display: flex;
+    flex-direction: column;
+}
+
+.container
+{
+}
+.popup
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 30px;
+    background-color: rgba(91, 90, 90, 0);
+    width: 70%;
+    justify-self: center;
+    margin-right: 0;
+    margin-left: auto;
+}
+.popupcontainer
+{
+    background-color:  rgba(91, 90, 90, 0.746);
+    width: 100%;
+    height: 30px;
+}
+.buy
+{   
+    background-color:#f00c0c;
+    border-radius:10px;
+    border:1px solid #e21f0d;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #6f0606;
+    width: 25%;
+
+}
+.sell
+{
+    background-color:#44c767;
+    border-radius:10px;
+    border:1px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+    width: 25%;
+}
+.sell:hover {
+	background-color:#369a50;
+}
+.buy:hover {
+	background-color:#bf0909;
+}
+.transfer:hover {
+	background-color:#2a219f;
+}
+.sell:active, .buy:active, .transfer:active {
+	position:relative;
+	top:1px;
+}
+.transfer
+{
+    background-color:#352ac6;
+    border-radius:10px;
+    border:1px solid #2514a0;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #0d066f;
+    width: 25%;
+}
+.left img
+{
+    width: 50px;
+    margin-top: 10px;
+    margin-left: 20px;
+
+}
+.punoime
+{
+    color: rgb(165, 161, 161);
+}
+.center 
+{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-left: 30px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.right 
+{
+    width: 50%;
+    color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-right: 5px;
+    margin-left: 10px;
+}
+.grafik 
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.rast 
+{
+    width: 20%;
+    color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+

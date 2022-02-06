@@ -1,0 +1,100 @@
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(83, 78, 78, 0.746);
+}
+span{
+    color: white;
+    margin: auto;
+    font-size: 25px;
+}
+.heder
+{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 100%;
+
+}
+.name
+{
+    margin-right: auto;
+    margin-left: 0;
+}
+.heder img{
+    width: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.buy{
+    margin-top: 30px;
+    border: 2px #dcd3d3 solid;
+    width: 30%;
+    height: 30px;
+    border-radius: 15px;
+    background-color:transparent ;
+    color:white;
+    margin-bottom: 5px;
+}
+.back
+{
+    margin-left: auto;
+}
+.buy:hover
+{
+    background-color: rgba(83, 78, 78, 0.49);
+}
+.buy:active{
+	position:relative;
+	top:1px;
+}
+.cenaspan
+{
+    font-size: 15px;
+}
+input {
+    text-align: center;  
+    border: 1px solid #6c757d00;
+    background-color: transparent;
+    color: white;
+  } 
+  
+  input[type="number"] {
+    -webkit-appearance: textfield !important;
+    -moz-appearance: textfield !important;
+    appearance: textfield !important;
+    }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+  
+  .wrapper {
+    border: 2px #dcd3d3 solid;
+    width: 40%;
+    height: 30px;
+    padding: 3px;
+    display: flex;
+    border-radius: 15px;
+  }
+  
+  .plusminus {
+    height: 100%;
+    width: 30%;
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    font-size: 30px;
+    color: #e7e7eb;
+  }
+  
+  .num {
+    height: 100%;
+    width: 39%;
+    border: none;
+    font-size: 30px;
+  }
