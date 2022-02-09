@@ -1,35 +1,36 @@
 <div class="container">
-<div class="hover">
-<div class="cont" *ngIf="valuta" (click)="click()">
-    
-    <div class="left">
-        <img src={{valuta.slika}} alt="">
+  <div class="hover">
+    <div class="cont" *ngIf="valuta" (click)="click()">
+     <div class="left">
+        <img src="{{ valuta.slika }}" alt="" />
+      </div> 
+      <div class="center">
+        <span>{{ valuta.ime }}</span>
+        <span class="punoime">{{ valuta.punoime }}</span>
+      </div>
+      <div class="grafik">
+        <app-grafik
+          [podaci]="grafik_podaci"
+          [color]="valuta.rast < 0 ? '#ff0000' : '#00ff00'"
+        ></app-grafik>
+      </div>
+      <div class="rast">
+        <span [ngStyle]="{ color: valuta.rast < 0 ? 'red' : 'green' }">{{
+          valuta.rast + "%"
+        }}</span>
+      </div>
+      <div class="right">
+        <span>{{ "$ " + valuta.cena }}</span>
+      </div>
     </div>
-    <div class="center">
-        <span>{{valuta.ime}}</span>
-        <span class="punoime">{{valuta.punoime}}</span>     
+  </div>
+  <div class="popupcontainer" *ngIf="hide">
+    <div class="popup">
+      <button class="sell" (click)="sell()" *ngIf="show">Sell</button>
+      <button class="transfer" *ngIf="show" (click)="transfer()">
+        Convert
+      </button>
+      <button class="buy" (click)="buy()">Buy</button>
     </div>
-    <div class="grafik">
-        <app-grafik [podaci]=grafik_podaci [color]="valuta.rast<0?'#ff0000':'#00ff00'"></app-grafik>
-    </div>
-    <div class="rast">
-        <span [ngStyle]="{'color':valuta.rast<0?'red':'green'}">{{valuta.rast+"%"}}</span>
-    </div>
-    <div class="right">
-        <span>{{"$ "+valuta.cena}}</span>
-    </div>
-    </div>
-   
-
+  </div>
 </div>
-<div class="popupcontainer" *ngIf="hide">
-    <div class="popup"  >
-        <button class="sell" (click)="sell()">Sell</button>
-        <button class="buy"  (click)="buy()">Buy</button>
-        <button class="transfer" (click)="transfer()">Convert</button>
-       </div>
-</div>
-
-</div>
-
-

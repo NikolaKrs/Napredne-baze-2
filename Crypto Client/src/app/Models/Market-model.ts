@@ -4,5 +4,4 @@ export interface Market{
     id: string
     ime:string
     coins:Valuta[]
-    curentCoin:Valuta
 }

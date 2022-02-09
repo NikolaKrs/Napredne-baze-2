@@ -3,14 +3,15 @@ import { Valuta } from 'src/app/Models/Valuta-model';
 import { Market } from '../../Models/Market-model';
 import { AppState } from '../app-state';
 
-export const selectMarketFeature = (state: AppState) => state;
+export const selectMarketFeature = (state: AppState) => state.market;
 
 export const selectMarket = createSelector(
   selectMarketFeature,
-  (state) => Object.values(state.market.entities)[0]
+  (state) => Object.values(state.market)
 );
 
-export const selectValutes = createSelector(
+export const selectCoins = createSelector(
   selectMarketFeature,
-  (state) => Object.values(state.market.entities)[0]?.coins
+  (state) => Object.values(state.market.coins)
 );
+``

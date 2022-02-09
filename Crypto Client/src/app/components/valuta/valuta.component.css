@@ -49,6 +49,8 @@
     text-decoration:none;
     text-shadow:0px 1px 0px #6f0606;
     width: 25%;
+    margin-left: auto;
+    margin-right: 10px;
 
 }
 .sell
@@ -63,6 +65,8 @@
     text-decoration:none;
     text-shadow:0px 1px 0px #2f6627;
     width: 25%;
+    margin-left: auto;
+    margin-right: 0;
 }
 .sell:hover {
 	background-color:#369a50;
@@ -89,6 +93,8 @@
     text-decoration:none;
     text-shadow:0px 1px 0px #0d066f;
     width: 25%;
+    margin-left: auto;
+    margin-right: 0;
 }
 .left img
 {

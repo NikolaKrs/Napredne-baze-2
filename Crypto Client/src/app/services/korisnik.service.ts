@@ -1,8 +1,11 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, throwError } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { catchError, map, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Korisnik } from '../Models/Korisnik-model';
+import { AppState } from '../store/app-state';
+import * as KorisnikActions from '../store/korisnik/korisnik.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +13,7 @@ import { Korisnik } from '../Models/Korisnik-model';
 export class KorisnikService {
 
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,private store: Store<AppState>) { }
 
   public getUser(username:string,password:string){
     return  this.httpClient.get<Korisnik>(`${environment.api}.....`).pipe(
@@ -34,6 +37,22 @@ export class KorisnikService {
   {
     return this.httpClient.post<{novoime:string}>(environment.api,image);//treba drugi api
   }
+  login(username: string, password: string) {
+    const headers = { 'content-type': 'application/json'}  
+
+    const body=JSON.stringify({"username":username,"password":password});
+    return this.httpClient.post<any>(`${environment.api}/Crypto/GetUser`,body,{'headers':headers})
+        .pipe(map(user => {
+            // login successful if there's a jwt token in the response
+            if (user) 
+            {
+                // store user details and jwt token in local storage to keep user logged in between page refreshe
+                this.store.dispatch( KorisnikActions.loadUserSuccess({ korisnik: user }));
+            }
+            KorisnikActions.loadUserSuccess({ korisnik: user })
+            return user;
+        }));
+}
 }
 
 

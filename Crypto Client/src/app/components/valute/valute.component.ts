@@ -1,5 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Valuta } from 'src/app/Models/Valuta-model';
+import { AppState } from 'src/app/store/app-state';
+import * as market from 'src/app/services/market.service';
+import { selectCoins } from 'src/app/store/market/market.selectors';
+import { selectUserCoins } from 'src/app/store/korisnik/korisnik.selectors';
 
 @Component({
   selector: 'app-valute',
@@ -10,13 +16,25 @@ export class ValuteComponent implements OnInit {
 
   public grafik_podaci:Array<number> =[1,2,3,-4,5,0,0,1,1,1,1,1,1,1,1];
   public valute:Array<Valuta> =[];
-  constructor() { }
-
-  ngOnInit() {
-    for (let i = 0; i < 10; i++)
-     {
-   this.valute.push( {id:"id",ime:"Shib",cena:0.53333,rast:i%2==0?-10:10,punoime:"Shiba inu",slika:"https://www.pngall.com/wp-content/uploads/10/Dogecoin-Crypto-Logo-PNG-Cutout.png"});
-    }
+  constructor(private store: Store<AppState>,private service: market.MarketService) { }
+  @Input() wallet_or_home:string="home";
+  @Input() show:boolean=false;
+  ngOnInit() 
+  {
+   if(this.wallet_or_home=='home')
+   {
+    this.store.select(selectCoins).subscribe((val:Valuta[])=>{
+      this.valute=val;
+      console.log(val)
+    });
+   } 
+  else if(this.wallet_or_home=='wallet')
+   {
+      this.store.select(selectUserCoins).subscribe((val:Valuta[])=>{
+      this.valute=val;
+      console.log(val)
+    });
+   } 
   }
 
 }

@@ -12,3 +12,7 @@ export const selectLogin = createSelector(
     selectUserFeature,
     (state)=> state.ulogovan
     );
+export const selectUserCoins = createSelector(
+    selectUserFeature,
+    (state)=> state.korisnik.values
+    );

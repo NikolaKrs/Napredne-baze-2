@@ -5,6 +5,8 @@ import { Store } from '@ngrx/store';
 import { ApexAxisChartSeries, ApexChart, ApexTitleSubtitle, ApexXAxis } from 'ng-apexcharts';
 import { Valuta } from 'src/app/Models/Valuta-model';
 import { AppState } from 'src/app/store/app-state';
+import * as Actions from 'src/app/store/coin/coin.actions';
+import { selectCurrentCoin } from 'src/app/store/coin/coin.selectors';
 EffectsModule
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -22,6 +24,7 @@ export class ValutaComponent implements OnInit {
   @Input() valuta:Valuta|null={id:"id",ime:"Shib",cena:0.0003453333,rast:10,punoime:"Shiba inu",slika:"https://www.pngall.com/wp-content/uploads/10/Dogecoin-Crypto-Logo-PNG-Cutout.png"}
   @Input() grafik_podaci:Array<number> =[];
   public hide:boolean=false
+  @Input()  show:boolean=false
   constructor(private router: Router,private store: Store<AppState>){}
  
   ngOnInit(): void
@@ -32,17 +35,30 @@ export class ValutaComponent implements OnInit {
   {
     console.log("klik")
     this.hide=!this.hide;
+    
   }
   buy()
   {
+    if(this.valuta!=null)
+    {
+      this.store.dispatch(Actions.SetCurrentCoin({coin:this.valuta}))
+    }
     this.router.navigate(["/buy"])
   }
   sell()
   {
+    if(this.valuta!=null)
+    {
+      this.store.dispatch(Actions.SetCurrentCoin({coin:this.valuta}))
+    }
     this.router.navigate(["/sell"])
   }
   transfer()
   {
+    if(this.valuta!=null)
+    {
+      this.store.dispatch(Actions.SetCurrentCoin({coin:this.valuta}))
+    }
     this.router.navigate(["/transfer"])
   }
 }

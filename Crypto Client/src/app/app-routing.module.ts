@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BuyComponent } from './components/buy/buy.component';
+import { LoginComponent } from './components/login/login.component';
 import { SellComponent } from './components/sell/sell.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { ValuteComponent } from './components/valute/valute.component';
+import { WalletComponent } from './components/wallet/wallet.component';
 
 const routes: Routes = [
   {
@@ -11,7 +13,7 @@ const routes: Routes = [
     component:BuyComponent
   },
   {
-    path:"valute",
+    path:"home",
     component:ValuteComponent
   },
   {
@@ -21,6 +23,15 @@ const routes: Routes = [
   {
     path:"transfer",
     component:TransferComponent
+  },
+  {
+    path:"wallet",
+    component:WalletComponent
+  }
+  ,
+  {
+    path:"login",
+    component:LoginComponent
   }
 
 ];

@@ -1,25 +1,22 @@
 <div class="container">
   <div class="heder">
-  <img src="https://www.pngall.com/wp-content/uploads/10/Dogecoin-Crypto-Logo-PNG-Cutout.png" alt="">
-  <span class="name">Shiba inu</span>
+  <img src={{valuta.slika}} alt="">
+  <span class="name">{{valuta.ime}}</span>
   <img src="./assets/images/back.png" alt="" class="back" (click)="back()">
   </div>
   <div class="wrapper">
     <button class="plusminus" (click)="handleMinus()">-</button>
     <input type="number" class="num" value={{value}} (keyup)="updatevalue($event)"/>
-    <span>Shib</span>
+    <span>{{valuta.ime}}</span>
     <button class="plusminus" (click)="handlePlus()">+</button>
   </div>
   <div class="valute">
     <select (change)="select($event)">
-      <option value="ADA">ADA</option>
-      <option value="BTC">BTC</option>
-      <option value="SHIB">SHIB</option>
-      <option value="ETH">ETH</option>
+      <option value={{i}}  *ngFor="let val of valute;let i = index ">{{val.ime}}</option>
     </select>
   </div>
   <div class="cena">
-    <span class="cenaspan">{{value}} SHIB - {{value/3.1}} {{selected}}</span>
+    <span class="cenaspan">{{value}} {{valuta.ime}} - {{value*valuta.cena/selected.cena}} {{selected.ime}}</span>
   </div>
   <button class="buy" (click)="buy()">Convert</button>
 

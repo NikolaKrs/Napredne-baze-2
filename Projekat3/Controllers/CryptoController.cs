@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MongoDB.Bson;
+using MongoDB.Bson.IO;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using Projekat3.Models;
 
@@ -18,16 +22,22 @@ namespace Projekat3.Controllers
        
         [HttpGet]
         [Route("Values")]
-        public async Task<List<String>> GetValues()
+        public async Task<string> GetValues()
         {
-            /*var client = new MongoClient("mongodb+srv://anjebza:nikola99@cluster0.4eozs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+            var client = new MongoClient("mongodb+srv://anjebza:nikola99@cluster0.4eozs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
             var db = client.GetDatabase("CryptoBase");
-            var collection = db.GetCollection<Values>("Valute");
-            
-            List<Values> firstDocument = collection.Find(new BsonDocument()).ToList();
-
-            return firstDocument;*/
-            return null;
+            var collectionValute = db.GetCollection<Values>("Valute");
+            var collectionmarket = db.GetCollection<Market>("Market");
+            var market = collectionmarket.Find(x => x.ime == "Binance").FirstOrDefault();
+            List<Values> firstDocument = collectionValute.Find(new BsonDocument()).ToList();;
+            MemoryStream ms = new MemoryStream();
+            var strwrtr = new System.IO.StringWriter();
+            var writer = new MongoDB.Bson.IO.JsonWriter(strwrtr, new MongoDB.Bson.IO.JsonWriterSettings());
+            MongoDB.Bson.Serialization.BsonSerializer.Serialize(writer, market);
+           // MongoDB.Bson.BsonDocument document= MongoDB.Bson.Serialization.BsonSerializer.Deserialize<BsonDocument>(strwrtr.ToString());
+            //document.Remove("_id");
+        
+            return strwrtr.ToString();
         }
         //dodavanje usera
         [HttpPost]
@@ -44,9 +54,9 @@ namespace Projekat3.Controllers
             //User user = new User { username = "hh", ime ="user", prezime="Petrovic", password="nikola99"/*, market= new MongoDBRef("Market", market.Id)*/ };
             collection.InsertOne(u);
 
-            market.users.Add(new MongoDBRef("Korisnici", u.Id));
+            market.korisnici.Add(new MongoDBRef("Korisnici", u.Id));
             var filter = Builders<Market>.Filter.Eq(x => x.Id, market.Id);
-            var update = Builders<Market>.Update.Set("users", market.users);
+            var update = Builders<Market>.Update.Set("users", market.korisnici);
             await collectionmarket.UpdateOneAsync(filter, update);
 
             return Ok();
@@ -64,12 +74,15 @@ namespace Projekat3.Controllers
 
             var market = collectionmarket.Find(x => x.ime == "Binance").FirstOrDefault();
 
+            
+
+
             Values value = new Values { ime = "hh", cena = 20, rast = 2.22/*, market= new MongoDBRef("Market", market.Id)*/ };
             collection.InsertOne(value);
 
-            market.values.Add(new MongoDBRef("Valute", value.Id));
+            market.valute.Add(new MongoDBRef("Valute", value._id));
             var filter = Builders<Market>.Filter.Eq(x => x.Id, market.Id);
-            var update = Builders<Market>.Update.Set("values", market.values);
+            var update = Builders<Market>.Update.Set("values", market.valute);
             await collectionmarket.UpdateOneAsync(filter, update);
 
             return Ok();
@@ -86,7 +99,7 @@ namespace Projekat3.Controllers
             var user = collection.Find(x => x.username == username).FirstOrDefault();
             var value = collectionv.Find(x => x.ime == ime).FirstOrDefault();
 
-            user.values.Add(new MongoDBRef("Valute", value.Id/*v.Id*/));
+            user.values.Add(new MongoDBRef("Valute", value._id/*v.Id*/));
 
             var filter = Builders<User>.Filter.Eq(x => x.Id, user.Id);
             var update = Builders<User>.Update.Set("values", user.values);

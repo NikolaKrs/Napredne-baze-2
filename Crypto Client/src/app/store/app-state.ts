@@ -7,5 +7,6 @@ import { MarketState } from "./market/market.reducer";
 export interface AppState{
     market:MarketState
     korisnik:KorisnikState
+    coin:Valuta
 } 
    

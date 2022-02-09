@@ -29,4 +29,22 @@ export class MarketEffect {
       )
     )
   );
+
+
+  loadCoinEffect$ = createEffect(() =>
+  this.actions$.pipe(
+    ofType(MarketActions.loadCoinsStart),
+    mergeMap((action) =>
+      this.marketService
+        .getValuta()
+
+        .pipe(
+          map((coins) =>
+            MarketActions.loadCoinsSuccess({ coins: coins })
+          ),
+          catchError(() => of({ type: 'load error' }))
+        )
+    )
+  )
+);
 }

@@ -19,21 +19,35 @@ import { MarketEffect } from './store/market/market.effects';
 import { KorisnikService } from './services/korisnik.service';
 import { MarketService } from './services/market.service';
 import { HttpClientModule } from '@angular/common/http';
+import { coinReducer } from './store/coin/coin.reducer';
+import { WalletComponent } from './components/wallet/wallet.component';
+import { TransferComponent } from './components/transfer/transfer.component';
+import { SellComponent } from './components/sell/sell.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     ValutaComponent,
     GrafikComponent,
     BuyComponent,
-    ValuteComponent
+    ValuteComponent,
+    WalletComponent,
+    TransferComponent,
+    SellComponent,
+    LoginComponent
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgApexchartsModule,
     SparklineModule,
+    FormsModule,
+    BrowserModule,
     HttpClientModule,
-    StoreModule.forRoot({market: marketReducer, korisnik: korisnikReducer}),
+    StoreModule.forRoot({market: marketReducer,coin:coinReducer, korisnik: korisnikReducer}),
     StoreDevtoolsModule.instrument({
       maxAge: 25
     }),

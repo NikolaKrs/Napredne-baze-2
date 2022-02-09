@@ -24,6 +24,7 @@
     "@ngrx/store-devtools": "^13.0.2",
     "@syncfusion/ej2-angular-charts": "^19.4.48",
     "angular-google-charts": "^2.2.2",
+    "bson-objectid": "^2.0.2",
     "igniteui-angular-charts": "^13.1.0",
     "ng-apexcharts": "^1.7.0",
     "rxjs": "~7.5.0",

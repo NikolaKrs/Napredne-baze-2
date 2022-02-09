@@ -1,8 +1,13 @@
-
 <div class="container">
+  <div class="login"  *ngIf="!login" (click)="Login()">
+    <span>Login</span>
+  </div>
+  <div class="user" (click)="wallet()"  *ngIf="login">
+    <img src="/assets/images/user.png" alt="">
+    <span>{{korisnik?.ime+" "+korisnik?.prezime}}</span>
+  </div>
+  <div class="center">
+    <router-outlet></router-outlet>
+  </div>
  
-<div class="center">
-  <router-outlet></router-outlet>
-</div>
-
 </div>

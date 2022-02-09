@@ -14,7 +14,12 @@ export class MarketService {
 
   public getMarket() {
     return this.httpClient
-      .get<Market>(`${environment.api}.....`)
+      .get<Market>(`https://localhost:44318/Crypto/GetMarket`)
+      .pipe(catchError(errorHandler));
+  }
+  public getValuta() {
+    return this.httpClient
+      .get<Array<Valuta>>(`https://localhost:44318/Crypto/GetValute`)
       .pipe(catchError(errorHandler));
   }
 
@@ -45,7 +50,7 @@ export class MarketService {
 const errorHandler = (error: HttpErrorResponse) => {
   const errorMessage =
     error.status === 0
-      ? 'Cant connect to API' + error.error
-      : 'Bakend returned code' + error.status;
+      ? 'Cant connect to API ' + error.error
+      : 'Backend returned code ' + error.status;
   return throwError(errorMessage);
 };
