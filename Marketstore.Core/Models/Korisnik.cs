@@ -1,27 +1,27 @@
-﻿using MongoDB.Bson;
+﻿
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Marketstore.Models
 {
-    public class Korisnik
+    public class Korisnik: MongoModel
     {
-        [BsonId]
-        [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
-        public string id { get; set; }
-        public string korisnickoIme { get; set; }
         public string ime { get; set; }
         public string prezime { get; set; }
+        public string korisnickoIme { get; set; }
         public string sifra { get; set; }
-        public List<MongoDBRef> valute { get; set; }
-       // public MongoDBRef market { get; set; }
+        [JsonIgnore]
+        public List<KorisnickaValuta> korisnickeValute { get; set; }
+
         public Korisnik()
         {
-            valute = new List<MongoDBRef>();
+            korisnickeValute = new List<KorisnickaValuta>();
         }
     }
 }

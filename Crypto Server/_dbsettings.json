@@ -1,0 +1,5 @@
+﻿{
+  "CONNECTION_STRING": "mongodb+srv://anjebza:nikola99@cluster0.4eozs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "DB_NAME": "CryptoBase",
+  "MAIN_COLLECTION": "Market"
+}

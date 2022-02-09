@@ -3,6 +3,7 @@ using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Marketstore.Core.Settings;
 
 namespace Marketstore.Core
 {
@@ -12,12 +13,18 @@ namespace Marketstore.Core
         private readonly IMongoDatabase db;
         public DbClient()
         {
-            var client = new MongoClient("mongodb+srv://anjebza:nikola99@cluster0.4eozs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-            db = client.GetDatabase("CryptoBase");
-            _market = db.GetCollection<Market>("Market");
-            
+            var client = new MongoClient(dbSettings.Connection_String);
+            db = client.GetDatabase(dbSettings.DB_Name);
+            _market = db.GetCollection<Market>(dbSettings.Main_Collection);
         }
-
+        public IMongoDatabase GetDB() 
+        {
+            return db;
+        }
+        /// <summary>
+        /// Funkcija za dobijanje kolekcije marketa.
+        /// </summary>
+        /// <returns> IMongoCollection<Market> </returns>
         public IMongoCollection<Market> GetMarketCollections()
         {
             return _market;

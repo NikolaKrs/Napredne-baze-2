@@ -16,23 +16,6 @@ namespace Crypto_Server.Controllers
     [Route("[controller]")]
     public class CryptoController : ControllerBase
     {
-        public class User
-        {
-            //public ObjectId Id { get; set; }
-            public String korisnickoIme { get; set; }
-            public String ime { get; set; }
-            public String prezime { get; set; }
-            public String sifra { get; set; }
-           
-           
-        }
-
-
-        public class pom
-        {
-           public string password { get; set; }
-           public string username { get; set; }
-        }
         private readonly IMarketService _marketService;
         public CryptoController(IMarketService marketService)
         {
@@ -40,75 +23,63 @@ namespace Crypto_Server.Controllers
         }
 
         [HttpGet]
-        [Route("GetMarket")]
-        public IActionResult GetMarket() 
-        {
-            /*Market m = _marketService.GetMarket();
-            m.valute = null;
-            m.korisnici = null;
+        public IActionResult GetMarket() => Ok(_marketService.GetValute());
 
-            return Ok( _marketService.GetValute());*/
-
-   
-            return Ok(_marketService.GetMarket());
-        }
-        [HttpGet]
-        [Route("GetValute")]
-        public IActionResult GetValute()
-        {
-            /*Market m = _marketService.GetMarket();
-            m.valute = null;
-            m.korisnici = null;
-
-            return Ok( _marketService.GetValute());*/
-
-
-            return Ok(_marketService.GetValute());
-        }
         [HttpPost]
         [Route("GetUser")]
-        public IActionResult GetUser([FromBody] pom name)
-        {
-            /*Market m = _marketService.GetMarket();
-            m.valute = null;
-            m.korisnici = null;
-            
-            return Ok( _marketService.GetValute());*/
-            //new Korisnik { ime = "sasa", password = "aaa", prezime = "aaa", username = "", values = null ,id=""}
-            
-            return Ok(new Korisnik { ime = name.username, sifra = name.password, prezime = "aaa", korisnickoIme = "", valute = null });
-        }
+        public IActionResult GetKorisnik([FromBody] IKorisnik korisnik) => Ok(_marketService.GetKorisnik(korisnik.korisnickoIme,korisnik.sifra));
 
         [HttpPost]
-        [Route("PostUser")]
-        public IActionResult PostUser([FromBody] User u)
+        [Route("InsertOrUpdateUserValute")]
+        public async Task<IActionResult> InsertOrUpdateUserValute([FromBody] IKorisnickaValuta k) => ParseResponse(await _marketService.InsertOrUpdateKorisnickeValute(k));
+
+        [HttpPost]
+        [Route("InsertUser")]
+        public async Task<IActionResult> InesrtKorisnik([FromBody] Korisnik k) => ParseResponse(await _marketService.InsertKorisnik(k));
+
+        [HttpPost]
+        [Route("InsertValute")]
+        public async Task<IActionResult> InsertValuta([FromBody] Valuta val) => ParseResponse(await _marketService.InsertValuta(val));
+
+        [HttpPut]
+        [Route("AddValuteToMarket/{valuta}")]
+        public async Task<IActionResult> AddValutaToMarket(string valuta) => ParseResponse(await _marketService.AddValutaToMarket(valuta));
+
+        [HttpPut]
+        [Route("UpdatePrice")]
+        public async Task<IActionResult> UpdateCena([FromBody] Valuta val) => ParseResponse(await _marketService.UpdateCena(val));
+
+        [HttpPut]
+        [Route("UpdateUser")]
+        public async Task<IActionResult> UpdateKorisnik([FromBody] Korisnik korisnik) => ParseResponse(await _marketService.UpdateKorisnik(korisnik));
+
+        /// <summary>
+        /// Stara funkcija, ne koristi se 
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("PostValue")]
+        public async Task<IActionResult> PostUser2()
         {
-            Console.Write("nnnnnjndndfjnjdfnfdn");
             var client = new MongoClient("mongodb+srv://anjebza:nikola99@cluster0.4eozs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
             var db = client.GetDatabase("CryptoBase");
-            var collection = db.GetCollection<User>("Korisnici");
+            var collection = db.GetCollection<Valuta>("Valute");
             var collectionmarket = db.GetCollection<Market>("Market");
-
-
 
             var market = collectionmarket.Find(x => x.ime == "Binance").FirstOrDefault();
 
+            Valuta value = new Valuta { ime = "nova", cena = 20, rast = 2.22, slika = "Nema"/*, market= new MongoDBRef("Market", market.Id)*/ };
+            collection.InsertOne(value);
 
+            market.valute.Add(new MongoDBRef("Valute", value.Id));
+            var filter = Builders<Market>.Filter.Eq(x => x.Id, market.Id);
+            var update = Builders<Market>.Update.Set("valute", market.valute);
+            await collectionmarket.UpdateOneAsync(filter, update);
 
-            //User user = new User { username = "hh", ime ="user", prezime="Petrovic", password="nikola99"/*, market= new MongoDBRef("Market", market.Id)*/ };
-            collection.InsertOne(u);
-
-
-
-            //market.korisnici.Add(new MongoDBRef("Korisnici", u.Id));
-            //var filter = Builders<Market>.Filter.Eq(x => x.Id, market.Id);
-            //var update = Builders<Market>.Update.Set("korisnici", market.korisnici);
-            //collectionmarket.UpdateOneAsync(filter, update);
-
-
-
-            return Ok(null);
+            return Ok();
         }
+
+        private IActionResult ParseResponse(SResponse sr) => sr.valid ? Ok(sr.message) : BadRequest(sr.message);
 
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jp13wytapv5GJQ1WaKVg/KqJdiLH9i7VIxI4cgkyvtBmUVEDU+NgNHcjI/xZvVX3wFjz3507/pHLpRVJJQVZNA==",
+  "dgSpecHash": "VwPYk4hGzhhAGY3C8CMMWTXb6Tpkkt9KR16dSbKYwdIs7eYKG9Fx9btWns4b/oivN0SR6PvHaiwx2N1SyN7kmw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Downloads\\Telegram Desktop\\Napredne-baze-2\\Crypto Server\\Crypto Server.csproj",
+  "projectFilePath": "E:\\Godina 4\\NBP\\NBPGit\\Napredne-baze-2\\Crypto Server\\Crypto Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
@@ -11,6 +11,7 @@
     "C:\\Users\\PC\\.nuget\\packages\\mongodb.driver\\2.14.1\\mongodb.driver.2.14.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\mongodb.driver.core\\2.14.1\\mongodb.driver.core.2.14.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\mongodb.libmongocrypt\\1.3.0\\mongodb.libmongocrypt.1.3.0.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",

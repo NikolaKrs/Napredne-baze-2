@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Marketstore.Core;
+using Marketstore.Core.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,10 +28,6 @@ namespace Crypto_Server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options =>
-            {
-                options.AddPolicy("CorsPolicy", builder => builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader().AllowCredentials());
-            });
             services.AddSingleton<IDbClient, DbClient>();
             services.AddTransient<IMarketService, MarketService>();
             services.AddControllers();
@@ -53,8 +50,6 @@ namespace Crypto_Server
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
-            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 

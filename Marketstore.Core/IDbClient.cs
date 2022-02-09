@@ -8,6 +8,7 @@ namespace Marketstore.Core
 {
     public interface IDbClient
     {
+       IMongoDatabase GetDB();
        IMongoCollection<Market> GetMarketCollections();
        IMongoCollection<Valuta> GetValutaCollections();
     }

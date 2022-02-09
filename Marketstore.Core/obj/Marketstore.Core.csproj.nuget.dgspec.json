@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Downloads\\Telegram Desktop\\Napredne-baze-2\\Marketstore.Core\\Marketstore.Core.csproj": {}
+    "E:\\Godina 4\\NBP\\NBPGit\\Napredne-baze-2\\Marketstore.Core\\Marketstore.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Downloads\\Telegram Desktop\\Napredne-baze-2\\Marketstore.Core\\Marketstore.Core.csproj": {
+    "E:\\Godina 4\\NBP\\NBPGit\\Napredne-baze-2\\Marketstore.Core\\Marketstore.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Downloads\\Telegram Desktop\\Napredne-baze-2\\Marketstore.Core\\Marketstore.Core.csproj",
+        "projectUniqueName": "E:\\Godina 4\\NBP\\NBPGit\\Napredne-baze-2\\Marketstore.Core\\Marketstore.Core.csproj",
         "projectName": "Marketstore.Core",
-        "projectPath": "C:\\Users\\PC\\Downloads\\Telegram Desktop\\Napredne-baze-2\\Marketstore.Core\\Marketstore.Core.csproj",
+        "projectPath": "E:\\Godina 4\\NBP\\NBPGit\\Napredne-baze-2\\Marketstore.Core\\Marketstore.Core.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Downloads\\Telegram Desktop\\Napredne-baze-2\\Marketstore.Core\\obj\\",
+        "outputPath": "E:\\Godina 4\\NBP\\NBPGit\\Napredne-baze-2\\Marketstore.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             },
             "System.Text.Json": {
               "target": "Package",

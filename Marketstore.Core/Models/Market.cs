@@ -9,12 +9,8 @@ using System.Text.Json.Serialization;
 
 namespace Marketstore.Models
 {
-    public class Market
+    public class Market:MongoModel
     {
-
-        [BsonId]
-        [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
-        public string Id { get; set; }
         public string ime { get; set; }
         
         [JsonIgnore]

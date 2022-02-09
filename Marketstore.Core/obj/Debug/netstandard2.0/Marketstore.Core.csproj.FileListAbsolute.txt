@@ -1,19 +1,9 @@
 D:\Napredne-baze-2\Marketstore.Core\bin\Debug\netstandard2.0\Marketstore.Core.deps.json
 D:\Napredne-baze-2\Marketstore.Core\bin\Debug\netstandard2.0\Marketstore.Core.dll
 D:\Napredne-baze-2\Marketstore.Core\bin\Debug\netstandard2.0\Marketstore.Core.pdb
-D:\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.csprojAssemblyReference.cache
 D:\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.AssemblyInfoInputs.cache
 D:\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.AssemblyInfo.cs
 D:\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.csproj.CoreCompileInputs.cache
 D:\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.dll
 D:\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.pdb
-C:\Users\PC\Downloads\Telegram Desktop\Napredne-baze-2\Marketstore.Core\bin\Debug\netstandard2.0\Marketstore.Core.deps.json
-C:\Users\PC\Downloads\Telegram Desktop\Napredne-baze-2\Marketstore.Core\bin\Debug\netstandard2.0\Marketstore.Core.dll
-C:\Users\PC\Downloads\Telegram Desktop\Napredne-baze-2\Marketstore.Core\bin\Debug\netstandard2.0\Marketstore.Core.pdb
-C:\Users\PC\Downloads\Telegram Desktop\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.csproj.AssemblyReference.cache
-C:\Users\PC\Downloads\Telegram Desktop\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\PC\Downloads\Telegram Desktop\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.AssemblyInfoInputs.cache
-C:\Users\PC\Downloads\Telegram Desktop\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.AssemblyInfo.cs
-C:\Users\PC\Downloads\Telegram Desktop\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.csproj.CoreCompileInputs.cache
-C:\Users\PC\Downloads\Telegram Desktop\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.dll
-C:\Users\PC\Downloads\Telegram Desktop\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.pdb
+D:\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.csprojAssemblyReference.cache
