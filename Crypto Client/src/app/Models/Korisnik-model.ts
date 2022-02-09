@@ -1,3 +1,4 @@
+import { KorisnikValuta } from "./korisnikValuta-model";
 import { Valuta } from "./Valuta-model";
 
 export interface Korisnik{
@@ -5,5 +6,5 @@ export interface Korisnik{
     ime:string,
     prezime:string,
     sifra:string,
-    valute:Valuta[]
+    korisnickeValute:KorisnikValuta[]
 }

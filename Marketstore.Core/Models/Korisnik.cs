@@ -16,7 +16,6 @@ namespace Marketstore.Models
         public string prezime { get; set; }
         public string korisnickoIme { get; set; }
         public string sifra { get; set; }
-        [JsonIgnore]
         public List<KorisnickaValuta> korisnickeValute { get; set; }
 
         public Korisnik()

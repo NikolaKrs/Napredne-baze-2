@@ -18,5 +18,5 @@ export const selectUserId = createSelector(
     );
 export const selectUserCoins = createSelector(
     selectUserFeature,
-    (state)=> state.korisnik.valute
+    (state)=> state.korisnik.korisnickeValute
     );

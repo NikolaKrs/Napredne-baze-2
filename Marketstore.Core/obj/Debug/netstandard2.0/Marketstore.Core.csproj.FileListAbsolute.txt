@@ -27,3 +27,13 @@ C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Marketstore
 C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.csproj.CoreCompileInputs.cache
 C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.dll
 C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.pdb
+E:\NBPGit\projekat\Marketstore.Core\bin\Debug\netstandard2.0\Marketstore.Core.deps.json
+E:\NBPGit\projekat\Marketstore.Core\bin\Debug\netstandard2.0\Marketstore.Core.dll
+E:\NBPGit\projekat\Marketstore.Core\bin\Debug\netstandard2.0\Marketstore.Core.pdb
+E:\NBPGit\projekat\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.csproj.AssemblyReference.cache
+E:\NBPGit\projekat\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\NBPGit\projekat\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.AssemblyInfoInputs.cache
+E:\NBPGit\projekat\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.AssemblyInfo.cs
+E:\NBPGit\projekat\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.csproj.CoreCompileInputs.cache
+E:\NBPGit\projekat\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.dll
+E:\NBPGit\projekat\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.pdb

@@ -2,25 +2,26 @@
   <div class="hover">
     <div class="cont" *ngIf="valuta" (click)="click()">
      <div class="left">
-        <img src="{{ valuta.slika }}" alt="" />
+        <img src="{{ valuta.valuta.slika}}" alt="" />
       </div> 
       <div class="center">
-        <span>{{ valuta.ime }}</span>
-        <span class="punoime">{{ valuta.punoime }}</span>
+        <span>{{ valuta.valuta.ime }}</span>
+        <span class="punoime">{{ valuta.valuta.punoime }}</span>
       </div>
       <div class="grafik">
         <app-grafik
           [podaci]="grafik_podaci"
-          [color]="valuta.rast < 0 ? '#ff0000' : '#00ff00'"
+          [color]="valuta.valuta.rast < 0 ? '#ff0000' : '#00ff00'"
         ></app-grafik>
       </div>
       <div class="rast">
-        <span [ngStyle]="{ color: valuta.rast < 0 ? 'red' : 'green' }">{{
-          valuta.rast + "%"
+        <span [ngStyle]="{ color: valuta.valuta.rast < 0 ? 'red' : 'green' }">{{
+          valuta.valuta.rast + "%"
         }}</span>
       </div>
       <div class="right">
-        <span>{{ "$ " + valuta.cena }}</span>
+        <span>{{ "$ " + valuta.valuta.cena }}</span>
+        <span *ngIf="valuta.kolicina">{{ "$ " + valuta.kolicina }}</span>
       </div>
     </div>
   </div>

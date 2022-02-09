@@ -10,7 +10,7 @@ import * as KorisnikService from '../../services/korisnik.service'
 })
 export class RegisterComponent implements OnInit {
 
-  korisnik:Korisnik ={korisnickoIme: "", ime:"",prezime:"", sifra:"", valute:[]}
+  korisnik:Korisnik ={korisnickoIme: "", ime:"",prezime:"", sifra:"", korisnickeValute:[]}
   constructor(/*private store: Store<AppState>,*/private service:KorisnikService.KorisnikService,private router: Router) { }
 
   ngOnInit() 

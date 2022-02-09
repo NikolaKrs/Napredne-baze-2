@@ -121,7 +121,7 @@ namespace Marketstore.Core
                 else if(valuta == null)
                     return null;
 
-                var kvalutaid = korisnik.korisnickeValute.FindIndex(x => x.valutaRef.Id == valuta.Id);
+                var kvalutaid = korisnik.korisnickeValute.FindIndex(x => x.valutaRef == valuta.Id);
 
                 if (kvalutaid >= 0)//Valuta postoji 
                 {
@@ -129,7 +129,7 @@ namespace Marketstore.Core
                 }
                 else
                 {
-                    KorisnickaValuta value = new KorisnickaValuta { valutaRef = new MongoDBRef("Valute", valuta.Id), kolicina = k.kolicina };
+                    KorisnickaValuta value = new KorisnickaValuta { valutaRef =  valuta.Id, kolicina = k.kolicina };
                     korisnik.korisnickeValute.Add(value);
                 }
                 var f = Builders<Korisnik>.Filter.Eq(x => x.Id, korisnik.Id);

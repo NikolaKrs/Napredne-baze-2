@@ -2,15 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Market } from '../Models/Market-model';
 import { environment } from 'src/environments/environment';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { Valuta } from '../Models/Valuta-model';
+import { Store } from '@ngrx/store';
+import { AppState } from '../store/app-state';
+import * as KorisnikActions from '../store/korisnik/korisnik.actions';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MarketService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient,private store: Store<AppState>) {}
 
   public getMarket() {
     return this.httpClient
@@ -31,7 +34,15 @@ export class MarketService {
       "kolicina": kolicina
     });
     return this.httpClient.post<any>(`${environment.api}/Crypto/InsertOrUpdateUserValute`,body,{'headers':headers})
-    .pipe(catchError(errorHandler));
+    .pipe(map(user => {
+      // login successful if there's a jwt token in the response
+      if (user) 
+      {
+           // store user details and jwt token in local storage to keep user logged in between page refreshe
+          this.store.dispatch( KorisnikActions.loadUserSuccess({ korisnik: user }));
+      }
+      return user;
+  }));
   }
 
   public putValute(valuta: Valuta) {

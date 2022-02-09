@@ -21,8 +21,6 @@ export class BuyComponent implements OnInit {
   valuta: Valuta;
   value=0;
   subscription: Subscription
-  subuser: Subscription
-  subusername:Subscription
   data:any;
   handleMinus() {
     if(this.value>=1)
@@ -47,28 +45,21 @@ export class BuyComponent implements OnInit {
   {
     this._location.back();
   }
-  buy()
+  async buy()
   {
-    this.subuser=this.store.select(selectLogin).subscribe(async (val:any)=>
-    {
-      if(val)
+      var log= await firstValueFrom(this.store.pipe(select(selectLogin),take(1)));
+      if(log)
       {
-        this.data= await firstValueFrom(this.store.pipe(select(selectUserId),take(1)))/*.toPromise().then((value) => {
-          return value;
-        });*/
-        console.log(this.data);
-        console.log(this.valuta.id);
-        console.log(this.value);
-        this.service.buyCoin(this.value, this.valuta.id, this.data).subscribe((val:any)=>
+        this.router.navigate(["wallet"]);
+        this.data= await firstValueFrom(this.store.pipe(select(selectUserId),take(1)));
+        this.service.buyCoin(this.value/this.valuta.cena, this.valuta.id, this.data).subscribe((val:any)=>
         console.log(val));
+       
       }
       else
       {
         this.router.navigate(["login"]);
       }
-    })
-    this.subuser.unsubscribe();
-   
     //this._location.back();
   }
   ngOnDestroy()

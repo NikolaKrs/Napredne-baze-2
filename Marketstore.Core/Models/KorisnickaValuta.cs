@@ -8,8 +8,8 @@ namespace Marketstore.Models
 {
     public class KorisnickaValuta
     {
-        [JsonIgnore]
-        public MongoDBRef valutaRef { get; set; }
+        //[JsonIgnore]
+        public string valutaRef { get; set; }
         public double kolicina { get; set; }
     }
 }

@@ -21,7 +21,7 @@ export type ChartOptions = {
   styleUrls: ['./valuta.component.css']
 })
 export class ValutaComponent implements OnInit {
-  @Input() valuta:Valuta|null={id:"id",ime:"Shib",cena:0.0003453333,rast:10,punoime:"Shiba inu",slika:"https://www.pngall.com/wp-content/uploads/10/Dogecoin-Crypto-Logo-PNG-Cutout.png"}
+  @Input() valuta:{valuta:Valuta,kolicina:number}|null={valuta:{id:"id",ime:"Shib",cena:0.0003453333,rast:10,punoime:"Shiba inu",slika:"https://www.pngall.com/wp-content/uploads/10/Dogecoin-Crypto-Logo-PNG-Cutout.png"},kolicina:0}
   @Input() grafik_podaci:Array<number> =[];
   public hide:boolean=false
   @Input()  show:boolean=false
@@ -41,7 +41,7 @@ export class ValutaComponent implements OnInit {
   {
     if(this.valuta!=null)
     {
-      this.store.dispatch(Actions.SetCurrentCoin({coin:this.valuta}))
+      this.store.dispatch(Actions.SetCurrentCoin({coin:this.valuta.valuta}))
     }
     this.router.navigate(["/buy"])
   }
@@ -49,7 +49,7 @@ export class ValutaComponent implements OnInit {
   {
     if(this.valuta!=null)
     {
-      this.store.dispatch(Actions.SetCurrentCoin({coin:this.valuta}))
+      this.store.dispatch(Actions.SetCurrentCoin({coin:this.valuta.valuta}))
     }
     this.router.navigate(["/sell"])
   }
@@ -57,7 +57,7 @@ export class ValutaComponent implements OnInit {
   {
     if(this.valuta!=null)
     {
-      this.store.dispatch(Actions.SetCurrentCoin({coin:this.valuta}))
+      this.store.dispatch(Actions.SetCurrentCoin({coin:this.valuta.valuta}))
     }
     this.router.navigate(["/transfer"])
   }

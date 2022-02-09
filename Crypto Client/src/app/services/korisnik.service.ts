@@ -52,7 +52,6 @@ export class KorisnikService {
                 // store user details and jwt token in local storage to keep user logged in between page refreshe
                 this.store.dispatch( KorisnikActions.loadUserSuccess({ korisnik: user }));
             }
-            KorisnikActions.loadUserSuccess({ korisnik: user })
             return user;
         }));
 }
