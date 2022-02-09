@@ -7,11 +7,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Text.Json.Serialization;
 
+
 namespace Marketstore.Models
 {
     public class Market:MongoModel
     {
         public string ime { get; set; }
+
+        public List<Valuta> valuteList { get; set; }
         
         [JsonIgnore]
         public List<MongoDBRef> valute { get; set; }

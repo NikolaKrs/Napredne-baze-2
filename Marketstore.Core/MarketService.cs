@@ -36,6 +36,7 @@ namespace Marketstore.Core
             /// <returns>Objekat klase Market</returns>
             public Market GetMarket()
             {
+                _market.valuteList = _market.valute.Select(x => refToObject<Valuta>(x)).ToList();
                 return _market;
             }
             public async Task<SResponse> AddValutaToMarket(string ime)

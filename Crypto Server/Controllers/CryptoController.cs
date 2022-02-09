@@ -23,8 +23,12 @@ namespace Crypto_Server.Controllers
         }
 
         [HttpGet]
+        [Route("GetMarket")]
+        public IActionResult GetMarket() => Ok(_marketService.GetMarket());
+
+        [HttpGet]
         [Route("GetValute")]
-        public IActionResult GetMarket() => Ok(_marketService.GetValute());
+        public IActionResult GetValute() => Ok(_marketService.GetValute());
 
         [HttpPost]
         [Route("GetUser")]
