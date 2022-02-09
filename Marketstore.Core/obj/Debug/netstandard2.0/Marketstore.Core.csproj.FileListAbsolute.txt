@@ -7,3 +7,13 @@ D:\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.cs
 D:\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.dll
 D:\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.pdb
 D:\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.csprojAssemblyReference.cache
+E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Marketstore.Core\bin\Debug\netstandard2.0\Marketstore.Core.deps.json
+E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Marketstore.Core\bin\Debug\netstandard2.0\Marketstore.Core.dll
+E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Marketstore.Core\bin\Debug\netstandard2.0\Marketstore.Core.pdb
+E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.csproj.AssemblyReference.cache
+E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.AssemblyInfoInputs.cache
+E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.AssemblyInfo.cs
+E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.csproj.CoreCompileInputs.cache
+E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.dll
+E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.pdb
