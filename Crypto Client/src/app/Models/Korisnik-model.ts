@@ -1,10 +1,9 @@
 import { Valuta } from "./Valuta-model";
 
 export interface Korisnik{
-    id:string,
-    username:string,
+    korisnickoIme:string,
     ime:string,
     prezime:string,
-    password:string,
-    values:Valuta[]
+    sifra:string,
+    valute:Valuta[]
 }

@@ -10,7 +10,7 @@ import * as korisnikService from '../../services/korisnik.service'
 })
 export class LoginComponent implements OnInit {
 
-  korisnik:Korisnik={ime:"",prezime:"",values:[],password:"",username:"",id:""};
+  korisnik:Korisnik={ime:"",prezime:"",valute:[],sifra:"",korisnickoIme:""};
   username:string="";
   password:string="";
   constructor(private servis:korisnikService.KorisnikService,private router: Router) { }
@@ -35,14 +35,6 @@ export class LoginComponent implements OnInit {
       
     });
     //this.store.dispatch(loadUserStart({korisnickoIme: username,sifra:password}));
-  }
-  Username(e:Event)
-  {
-
-  }
-  Password(e:Event)
-  {
-    
   }
 
 }

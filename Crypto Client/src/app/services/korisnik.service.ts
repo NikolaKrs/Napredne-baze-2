@@ -27,10 +27,12 @@ export class KorisnikService {
     )
   }
 
-  public insertUser(user:Korisnik){
+  public insertUser(korisnik:Korisnik){
     const headers = { 'content-type': 'application/json'}  
-    const body=JSON.stringify(user);
-    return this.httpClient.post<Korisnik>(environment.api+"korisnici/",body,{'headers':headers});
+    const body=JSON.stringify(korisnik);
+    return this.httpClient.post<Korisnik>(`${environment.api}/Crypto/PostUser`,body,{'headers':headers}).pipe(
+      catchError(errorHandler)
+    );
   }
 
   public uploadImage(image: ArrayBuffer)

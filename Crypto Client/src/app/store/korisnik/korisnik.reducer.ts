@@ -8,7 +8,7 @@ export interface KorisnikState{
     ulogovan: boolean
 }
 
-export const initialState : KorisnikState = {korisnik:{id:"",username:"Nema2",ime:"Nema1",prezime:"Nema3",password:"Nema4",values:[]},ulogovan:false}
+export const initialState : KorisnikState = {korisnik:{korisnickoIme:"Nema2",ime:"Nema1",prezime:"Nema3",sifra:"Nema4",valute:[]},ulogovan:false}
 
 export const korisnikReducer = createReducer(
     initialState,

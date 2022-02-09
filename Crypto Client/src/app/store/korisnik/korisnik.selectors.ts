@@ -14,5 +14,5 @@ export const selectLogin = createSelector(
     );
 export const selectUserCoins = createSelector(
     selectUserFeature,
-    (state)=> state.korisnik.values
+    (state)=> state.korisnik.valute
     );
