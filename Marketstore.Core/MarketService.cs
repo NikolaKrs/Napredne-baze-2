@@ -77,6 +77,18 @@ namespace Marketstore.Core
                 await collectionValute.InsertOneAsync(val);
                 return new SResponse(true, $"Valuta {val.ime} uspesno dodata.");
             }
+            public async Task<SResponse> DeleteValuta(string val)
+            {
+                var collectionValute = _db.GetCollection<Valuta>("Valute");
+                var valuta = collectionValute.Find(x => x.ime == val).FirstOrDefault();
+
+                if (valuta != null)
+                    return new SResponse(false, $"Valuta {val} vec postoji u bazi.");
+
+                var f = Builders<Valuta>.Filter.Eq(x => x.Id, valuta.Id);
+                await collectionValute.DeleteOneAsync(f);
+                return new SResponse(true, $"Valuta {val} uspesno dodata.");
+            }
             public async Task<SResponse> UpdateCena(Valuta val) 
             {
                 var collectionValute = _db.GetCollection<Valuta>("Valute");

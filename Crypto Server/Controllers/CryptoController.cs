@@ -30,10 +30,13 @@ namespace Crypto_Server.Controllers
         [Route("GetValute")]
         public IActionResult GetValute() => Ok(_marketService.GetValute());
 
+        [HttpDelete]
+        [Route("DeleteValute/{valuta}")]
+        public async Task<IActionResult> DeleteValuta(string valuta) => ParseResponse(await _marketService.DeleteValuta(valuta));
+
         [HttpPost]
         [Route("GetUser")]
-        public IActionResult GetKorisnik([FromBody] IKorisnik korisnik) =>
-            Ok(_marketService.GetKorisnik(korisnik.korisnickoIme,korisnik.sifra));
+        public IActionResult GetKorisnik([FromBody] IKorisnik korisnik) => Ok(_marketService.GetKorisnik(korisnik.korisnickoIme,korisnik.sifra));
 
         [HttpPost]
         [Route("InsertOrUpdateUserValute")]
@@ -41,8 +44,7 @@ namespace Crypto_Server.Controllers
 
         [HttpPost]
         [Route("InsertUser")]
-        public async Task<IActionResult> InesrtKorisnik([FromBody] Korisnik k) =>
-            ParseResponse(await _marketService.InsertKorisnik(k));
+        public async Task<IActionResult> InesrtKorisnik([FromBody] Korisnik k) => ParseResponse(await _marketService.InsertKorisnik(k));
 
         [HttpPost]
         [Route("InsertValute")]
