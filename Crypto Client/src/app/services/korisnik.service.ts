@@ -28,9 +28,10 @@ export class KorisnikService {
   }
 
   public insertUser(korisnik:Korisnik){
+    console.log("stampam");
     const headers = { 'content-type': 'application/json'}  
     const body=JSON.stringify(korisnik);
-    return this.httpClient.post<Korisnik>(`${environment.api}/Crypto/PostUser`,body,{'headers':headers}).pipe(
+    return this.httpClient.post<Korisnik>(`${environment.api}/Crypto/InsertUser`,body,{'headers':headers}).pipe(
       catchError(errorHandler)
     );
   }
@@ -42,7 +43,7 @@ export class KorisnikService {
   login(username: string, password: string) {
     const headers = { 'content-type': 'application/json'}  
 
-    const body=JSON.stringify({"username":username,"password":password});
+    const body=JSON.stringify({"korisnickoIme":username,"sifra":password});
     return this.httpClient.post<any>(`${environment.api}/Crypto/GetUser`,body,{'headers':headers})
         .pipe(map(user => {
             // login successful if there's a jwt token in the response

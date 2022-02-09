@@ -22,6 +22,17 @@ export class MarketService {
       .get<Array<Valuta>>(`https://localhost:44318/Crypto/GetValute`)
       .pipe(catchError(errorHandler));
   }
+  public buyCoin(kolicina:number, valuta: string, id:string) {
+    const headers = { 'content-type': 'application/json'}  
+
+    const body=JSON.stringify({
+      "korisnik": id,
+      "valuta": valuta,
+      "kolicina": kolicina
+    });
+    return this.httpClient.post<any>(`${environment.api}/Crypto/InsertOrUpdateUserValute`,body,{'headers':headers})
+    .pipe(catchError(errorHandler));
+  }
 
   public putValute(valuta: Valuta) {
     //UPDATE

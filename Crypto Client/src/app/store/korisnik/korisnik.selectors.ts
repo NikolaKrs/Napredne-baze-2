@@ -12,6 +12,10 @@ export const selectLogin = createSelector(
     selectUserFeature,
     (state)=> state.ulogovan
     );
+export const selectUserId = createSelector(
+    selectUserFeature,
+    (state)=> state.korisnik.korisnickoIme
+    );
 export const selectUserCoins = createSelector(
     selectUserFeature,
     (state)=> state.korisnik.valute

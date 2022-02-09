@@ -1,6 +1,7 @@
 <div class="registercontainer">
-  <div class="naslov"><h1>Registracija</h1></div>
+  
   <div class="forma">
+    <div class="naslov"><h1>Registracija</h1></div>
     <p>Korisnicko ime</p>
     <input type="text" class="inputtext" id="username" placeholder="username" [(ngModel)]="korisnik.korisnickoIme"/>
     <p>Ime</p>
@@ -8,7 +9,7 @@
     <p>Prezime</p>
     <input type="text" class="inputtext" id="prezime" placeholder="last name"[(ngModel)]="korisnik.prezime" />
     <p>Lozinka</p>
-    <input type="text" class="inputtext" id="password" placeholder="password"[(ngModel)]="korisnik.sifra" />
+    <input type="password" class="inputtext" id="password" placeholder="password"[(ngModel)]="korisnik.sifra" />
     <br /><button (click)="register()">Registracija</button>
   </div>
 </div>

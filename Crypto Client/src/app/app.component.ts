@@ -45,5 +45,6 @@ export class AppComponent {
     this.router.navigate(["login"])
   }
     //this.store.dispatch(loadUserStart({korisnickoIme: username,sifra:password}));
+  
 
 }

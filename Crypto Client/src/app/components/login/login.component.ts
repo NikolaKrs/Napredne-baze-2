@@ -36,5 +36,9 @@ export class LoginComponent implements OnInit {
     });
     //this.store.dispatch(loadUserStart({korisnickoIme: username,sifra:password}));
   }
+  Registrujse()
+  {
+    this.router.navigate(["register"]);
+  }
 
 }

@@ -108,24 +108,24 @@ namespace Marketstore.Core
                     return new SResponse(true, $"Uspesno dadat korisnik: {korisnik.korisnickoIme}");
                 }  
             }
-            public async Task<SResponse> InsertOrUpdateKorisnickeValute(IKorisnickaValuta k)
+            public async Task<Korisnik> InsertOrUpdateKorisnickeValute(IKorisnickaValuta k)
             {
                 var collectionValute = _db.GetCollection<Valuta>("Valute");
                 var collectionKorisnik = _db.GetCollection<Korisnik>("Korisnici");
 
-                var korisnik = collectionKorisnik.Find(x => x.Id == k.korisnik || x.ime == k.korisnik).FirstOrDefault();
+                var korisnik = collectionKorisnik.Find(x => x.korisnickoIme == k.korisnik ).FirstOrDefault();
                 var valuta = collectionValute.Find(x => x.Id == k.valuta || x.ime == k.valuta).FirstOrDefault();
 
                 if (korisnik == null)
-                    return new SResponse(false, "Nije pronadjen korisnik.");
+                    return null;
                 else if(valuta == null)
-                    return new SResponse(false, "Nije pronadjea valuta.");
+                    return null;
 
                 var kvalutaid = korisnik.korisnickeValute.FindIndex(x => x.valutaRef.Id == valuta.Id);
 
                 if (kvalutaid >= 0)//Valuta postoji 
                 {
-                    korisnik.korisnickeValute[kvalutaid].kolicina = k.kolicina;
+                    korisnik.korisnickeValute[kvalutaid].kolicina = korisnik.korisnickeValute[kvalutaid].kolicina+k.kolicina;
                 }
                 else
                 {
@@ -135,7 +135,7 @@ namespace Marketstore.Core
                 var f = Builders<Korisnik>.Filter.Eq(x => x.Id, korisnik.Id);
                 var u = Builders<Korisnik>.Update.Set("korisnickeValute", korisnik.korisnickeValute);
                 await collectionKorisnik.UpdateOneAsync(f, u);
-                return new SResponse(true, "Uspesno azuriranje korisnickih valuta.");
+                return korisnik;
             }
             public async Task<SResponse> UpdateKorisnik(Korisnik k)
             {

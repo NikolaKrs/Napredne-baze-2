@@ -23,19 +23,22 @@ namespace Crypto_Server.Controllers
         }
 
         [HttpGet]
+        [Route("GetValute")]
         public IActionResult GetMarket() => Ok(_marketService.GetValute());
 
         [HttpPost]
         [Route("GetUser")]
-        public IActionResult GetKorisnik([FromBody] IKorisnik korisnik) => Ok(_marketService.GetKorisnik(korisnik.korisnickoIme,korisnik.sifra));
+        public IActionResult GetKorisnik([FromBody] IKorisnik korisnik) =>
+            Ok(_marketService.GetKorisnik(korisnik.korisnickoIme,korisnik.sifra));
 
         [HttpPost]
         [Route("InsertOrUpdateUserValute")]
-        public async Task<IActionResult> InsertOrUpdateUserValute([FromBody] IKorisnickaValuta k) => ParseResponse(await _marketService.InsertOrUpdateKorisnickeValute(k));
+        public async Task<IActionResult> InsertOrUpdateUserValute([FromBody] IKorisnickaValuta k) => Ok(await _marketService.InsertOrUpdateKorisnickeValute(k));
 
         [HttpPost]
         [Route("InsertUser")]
-        public async Task<IActionResult> InesrtKorisnik([FromBody] Korisnik k) => ParseResponse(await _marketService.InsertKorisnik(k));
+        public async Task<IActionResult> InesrtKorisnik([FromBody] Korisnik k) =>
+            ParseResponse(await _marketService.InsertKorisnik(k));
 
         [HttpPost]
         [Route("InsertValute")]

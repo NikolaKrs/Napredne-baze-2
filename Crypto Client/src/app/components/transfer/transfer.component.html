@@ -11,7 +11,7 @@
     <button class="plusminus" (click)="handlePlus()">+</button>
   </div>
   <div class="valute">
-    <select (change)="select($event)">
+    <select (change)="select($event)" >
       <option value={{i}}  *ngFor="let val of valute;let i = index ">{{val.ime}}</option>
     </select>
   </div>

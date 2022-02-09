@@ -15,7 +15,7 @@ namespace Marketstore.Core
         Task<SResponse> InsertValuta(Valuta val);
         Korisnik GetKorisnik(string korisnickoIme, string sifra);
         Task<SResponse> InsertKorisnik(Korisnik korisnik);
-        Task<SResponse> InsertOrUpdateKorisnickeValute(IKorisnickaValuta k);
+        Task<Korisnik> InsertOrUpdateKorisnickeValute(IKorisnickaValuta k);
         Task<SResponse> AddValutaToMarket(string ime);
         Task<SResponse> UpdateCena(Valuta val);
         Task<SResponse> UpdateKorisnik(Korisnik k);

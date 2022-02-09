@@ -17,7 +17,8 @@ export class TransferComponent implements OnInit {
 
   constructor(private router:Router,private _location: Location,private store: Store<AppState>,private service: market.MarketService) { }
   value = 0;
-  selected:Valuta={id:"",ime:"",cena:0,rast:0,punoime:"",slika:""};;
+  selected:Valuta={id:"",ime:"",cena:0,rast:0,punoime:"",slika:""};
+  
   valuta: Valuta;
   subscription: Subscription;
   public valute:Valuta[];

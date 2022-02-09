@@ -17,3 +17,13 @@ E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0
 E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.csproj.CoreCompileInputs.cache
 E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.dll
 E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.pdb
+C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Marketstore.Core\bin\Debug\netstandard2.0\Marketstore.Core.deps.json
+C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Marketstore.Core\bin\Debug\netstandard2.0\Marketstore.Core.dll
+C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Marketstore.Core\bin\Debug\netstandard2.0\Marketstore.Core.pdb
+C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.csproj.AssemblyReference.cache
+C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.AssemblyInfoInputs.cache
+C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.AssemblyInfo.cs
+C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.csproj.CoreCompileInputs.cache
+C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.dll
+C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Marketstore.Core\obj\Debug\netstandard2.0\Marketstore.Core.pdb

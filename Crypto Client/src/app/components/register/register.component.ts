@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Korisnik } from 'src/app/Models/Korisnik-model';
 import * as KorisnikService from '../../services/korisnik.service'
 
@@ -10,11 +11,11 @@ import * as KorisnikService from '../../services/korisnik.service'
 export class RegisterComponent implements OnInit {
 
   korisnik:Korisnik ={korisnickoIme: "", ime:"",prezime:"", sifra:"", valute:[]}
-  constructor(/*private store: Store<AppState>,*/private service:KorisnikService.KorisnikService/*,private router: Router*/) { }
+  constructor(/*private store: Store<AppState>,*/private service:KorisnikService.KorisnikService,private router: Router) { }
 
   ngOnInit() 
   {
-
+    
   }
   register()
   {
@@ -23,6 +24,7 @@ export class RegisterComponent implements OnInit {
       console.log(val)
     }
     )
+    this.router.navigate(["login"]);
   }
 
 }
