@@ -12,7 +12,7 @@ export const initialState: MarketState = {market:{id:"",ime:"",coins:[]}};
 
 export const marketReducer = createReducer(
   initialState,
-  on(Actions.loadMarketSuccess, (state, { market }) =>({...state,market:{...state.market,id:market.id,ime:market.ime}})
+  on(Actions.loadMarketSuccess, (state, { market }) =>({...state,market:{...state.market,id:market.id,ime:market.ime,coins:market.coins}})
   ),
   on(Actions.loadCoinsSuccess, (state, { coins }) =>({...state,market: {...state.market,coins:coins}})
   ),

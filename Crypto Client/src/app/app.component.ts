@@ -22,7 +22,7 @@ export class AppComponent {
   constructor(private router: Router,private store: Store<AppState>,private servis:korisnikService.KorisnikService){}
   ngOnInit() {
     this.store.dispatch(loadMarketStart());
-    this.store.dispatch(loadCoinsStart());
+    //this.store.dispatch(loadCoinsStart());
     this.router.navigate(["home"])
     this.store.select(selectUser).subscribe((val:Korisnik)=>
     {
