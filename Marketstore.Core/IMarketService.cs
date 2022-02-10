@@ -19,6 +19,7 @@ namespace Marketstore.Core
         Task<SResponse> AddValutaToMarket(string ime);
         Task<SResponse> UpdateCena(Valuta val);
         Task<SResponse> UpdateKorisnik(Korisnik k);
+        Task<SResponse> DeleteValuta(string valuta);
         T refToObject<T>(MongoDBRef reference) where T : MongoModel;
     }
 }
