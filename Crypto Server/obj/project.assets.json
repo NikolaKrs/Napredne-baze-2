@@ -737,26 +737,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PC\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\krsti\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\NBPGit\\projekat\\Crypto Server\\Crypto Server.csproj",
+      "projectUniqueName": "D:\\Napredne-baze-2\\Crypto Server\\Crypto Server.csproj",
       "projectName": "Crypto Server",
-      "projectPath": "E:\\NBPGit\\projekat\\Crypto Server\\Crypto Server.csproj",
-      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "E:\\NBPGit\\projekat\\Crypto Server\\obj\\",
+      "projectPath": "D:\\Napredne-baze-2\\Crypto Server\\Crypto Server.csproj",
+      "packagesPath": "C:\\Users\\krsti\\.nuget\\packages\\",
+      "outputPath": "D:\\Napredne-baze-2\\Crypto Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\krsti\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -765,15 +762,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\NBPGit\\projekat\\Marketstore.Core\\Marketstore.Core.csproj": {
-              "projectPath": "E:\\NBPGit\\projekat\\Marketstore.Core\\Marketstore.Core.csproj"
+            "D:\\Napredne-baze-2\\Marketstore.Core\\Marketstore.Core.csproj": {
+              "projectPath": "D:\\Napredne-baze-2\\Marketstore.Core\\Marketstore.Core.csproj"
             }
           }
         }
@@ -819,7 +815,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }
