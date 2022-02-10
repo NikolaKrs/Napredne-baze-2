@@ -14,6 +14,7 @@ namespace Marketstore.Models
     {
         public string ime { get; set; }
 
+        [JsonPropertyName("coins")]
         public List<Valuta> valuteList { get; set; }
         
         [JsonIgnore]
