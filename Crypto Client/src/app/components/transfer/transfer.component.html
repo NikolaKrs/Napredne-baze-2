@@ -1,13 +1,13 @@
 <div class="container">
   <div class="heder">
-  <img src={{valuta.slika}} alt="">
-  <span class="name">{{valuta.ime}}</span>
+  <img src={{valuta.coin.slika}} alt="">
+  <span class="name">{{valuta.coin.ime}}</span>
   <img src="./assets/images/back.png" alt="" class="back" (click)="back()">
   </div>
   <div class="wrapper">
     <button class="plusminus" (click)="handleMinus()">-</button>
-    <input type="number" class="num" value={{value}} (keyup)="updatevalue($event)"/>
-    <span>{{valuta.ime}}</span>
+    <input type="number" class="num" value={{value}} (keyup)="updatevalue()" [(ngModel)]="value"/>
+    <span>{{valuta.coin.ime}}</span>
     <button class="plusminus" (click)="handlePlus()">+</button>
   </div>
   <div class="valute">
@@ -16,7 +16,7 @@
     </select>
   </div>
   <div class="cena">
-    <span class="cenaspan">{{value}} {{valuta.ime}} - {{value*valuta.cena/selected.cena}} {{selected.ime}}</span>
+    <span class="cenaspan">{{value}} {{valuta.coin.ime}} - {{value*valuta.coin.cena/selected.cena}} {{selected.ime}}</span>
   </div>
   <button class="buy" (click)="buy()">Convert</button>
 

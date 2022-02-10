@@ -1,7 +1,7 @@
 <div class="container">
   <div class="heder">
-  <img src={{valuta.slika}} alt="">
-  <span class="name">{{valuta.ime}}</span>
+  <img src={{valuta.coin.slika}} alt="">
+  <span class="name">{{valuta.coin.ime}}</span>
   <img src="./assets/images/back.png" alt="" class="back" (click)="back()">
   </div>
   <div class="wrapper">
@@ -11,7 +11,7 @@
     <button class="plusminus"  (click)="handlePlus()">+</button>
   </div>
   <div class="cena">
-    <span class="cenaspan">{{value}} USD - {{value/valuta.cena}} {{valuta.ime}}</span>
+    <span class="cenaspan">{{value}} USD - {{value/valuta.coin.cena}} {{valuta.coin.ime}}</span>
   </div>
   <button class="buy" (click)="buy()">Buy</button>
 

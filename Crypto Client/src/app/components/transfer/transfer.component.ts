@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/app-state';
 import { Subscription } from 'rxjs';
 import * as market from 'src/app/services/market.service';
+import { CoinState } from 'src/app/store/coin/coin.reducer';
 
 @Component({
   selector: 'app-transfer',
@@ -19,7 +20,7 @@ export class TransferComponent implements OnInit {
   value = 0;
   selected:Valuta={id:"",ime:"",cena:0,rast:0,punoime:"",slika:""};
   
-  valuta: Valuta;
+  valuta: CoinState;
   subscription: Subscription;
   public valute:Valuta[];
   handleMinus() {
@@ -29,7 +30,10 @@ export class TransferComponent implements OnInit {
     }
   }
   handlePlus() {
-    this.value++;    
+    if(this.value<=this.valuta.kolicina-1)
+    {
+      this.value++;    
+    }
   }
   back()
   {
@@ -39,10 +43,12 @@ export class TransferComponent implements OnInit {
   {
     this._location.back();
   }
-  updatevalue(event:Event)
+  updatevalue()
   {
-    console.log((event.target as HTMLInputElement).value);
-    this.value=(Number)((event.target as HTMLInputElement).value);
+    if(this.value>this.valuta.kolicina-1)
+    {
+      this.value=this.valuta.kolicina;
+    }
   }
   select(event:Event)
   {
@@ -51,7 +57,7 @@ export class TransferComponent implements OnInit {
   }
   ngOnInit() 
   {
-    this.subscription=this.store.select(selectCurrentCoin).subscribe((val:Valuta)=>{
+    this.subscription=this.store.select(selectCurrentCoin).subscribe((val:CoinState)=>{
 
       this.valuta=val;
       console.log(val)

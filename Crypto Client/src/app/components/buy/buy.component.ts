@@ -9,6 +9,7 @@ import { Market } from 'src/app/Models/Market-model';
 import * as market from 'src/app/services/market.service';
 import { firstValueFrom, Subscription, take } from 'rxjs';
 import { selectLogin, selectUser, selectUserId } from 'src/app/store/korisnik/korisnik.selectors';
+import { CoinState } from 'src/app/store/coin/coin.reducer';
 
 @Component({
   selector: 'app-buy',
@@ -18,7 +19,7 @@ import { selectLogin, selectUser, selectUserId } from 'src/app/store/korisnik/ko
 export class BuyComponent implements OnInit {
 
   constructor(private router:Router,private _location: Location,private store: Store<AppState>,private service: market.MarketService) { }
-  valuta: Valuta;
+  valuta: CoinState;
   value=0;
   subscription: Subscription
   data:any;
@@ -33,7 +34,7 @@ export class BuyComponent implements OnInit {
   }
   ngOnInit() 
   {
-     this.subscription= this.store.select(selectCurrentCoin).subscribe((val:Valuta)=>{
+     this.subscription= this.store.select(selectCurrentCoin).subscribe((val:CoinState)=>{
 
         this.valuta=val;
         console.log(val)
@@ -52,7 +53,7 @@ export class BuyComponent implements OnInit {
       {
         this.router.navigate(["wallet"]);
         this.data= await firstValueFrom(this.store.pipe(select(selectUserId),take(1)));
-        this.service.buyCoin(this.value/this.valuta.cena, this.valuta.id, this.data).subscribe((val:any)=>
+        this.service.buyCoin(this.value/this.valuta.coin.cena, this.valuta.coin.id, this.data).subscribe((val:any)=>
         console.log(val));
        
       }

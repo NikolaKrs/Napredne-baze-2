@@ -41,7 +41,7 @@ export class ValutaComponent implements OnInit {
   {
     if(this.valuta!=null)
     {
-      this.store.dispatch(Actions.SetCurrentCoin({coin:this.valuta.valuta}))
+      this.store.dispatch(Actions.SetCurrentCoin({coin:{coin:this.valuta.valuta,kolicina:this.valuta.kolicina}}))
     }
     this.router.navigate(["/buy"])
   }
@@ -49,7 +49,7 @@ export class ValutaComponent implements OnInit {
   {
     if(this.valuta!=null)
     {
-      this.store.dispatch(Actions.SetCurrentCoin({coin:this.valuta.valuta}))
+      this.store.dispatch(Actions.SetCurrentCoin({coin:{coin:this.valuta.valuta,kolicina:this.valuta.kolicina}}))
     }
     this.router.navigate(["/sell"])
   }
@@ -57,7 +57,7 @@ export class ValutaComponent implements OnInit {
   {
     if(this.valuta!=null)
     {
-      this.store.dispatch(Actions.SetCurrentCoin({coin:this.valuta.valuta}))
+      this.store.dispatch(Actions.SetCurrentCoin({coin:{coin:this.valuta.valuta,kolicina:this.valuta.kolicina}}))
     }
     this.router.navigate(["/transfer"])
   }

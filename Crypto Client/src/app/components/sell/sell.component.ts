@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/app-state';
 import { Subscription } from 'rxjs';
 import { loadCoinsStart, loadMarketStart, loadMarketSuccess } from 'src/app/store/market/market.actions';
+import { CoinState } from 'src/app/store/coin/coin.reducer';
 
 @Component({
   selector: 'app-sell',
@@ -17,7 +18,7 @@ export class SellComponent implements OnInit {
 
   constructor(private router:Router,private _location: Location,private store: Store<AppState>) { }
   value = 0;
-  valuta: Valuta;
+  valuta: CoinState;
   subscription: Subscription 
   handleMinus() {
     if(this.value>=1)
@@ -26,24 +27,30 @@ export class SellComponent implements OnInit {
     }
   }
   handlePlus() {
-    this.value++;    
+    if(this.value<=this.valuta.kolicina-1)
+    {
+      this.value++;    
+    }
   }
   back()
   {
     this._location.back();
   }
-  buy()
+  sell()
   {
     this._location.back();
   }
-  updatevalue(event:Event)
+  updatevalue()
   {
-    console.log((event.target as HTMLInputElement).value);
-    this.value=(Number)((event.target as HTMLInputElement).value);
+    
+    if(this.value>this.valuta.kolicina-1)
+    {
+      this.value=this.valuta.kolicina;
+    }
   }
   ngOnInit()
   {
-    this.subscription=this.store.select(selectCurrentCoin).subscribe((val:Valuta)=>{
+    this.subscription=this.store.select(selectCurrentCoin).subscribe((val:CoinState)=>{
 
       this.valuta=val;
       console.log(val)
