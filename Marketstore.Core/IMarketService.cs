@@ -10,12 +10,14 @@ namespace Marketstore.Core
 {
     public interface IMarketService
     {
-        Market GetMarket();
-        List<Valuta> GetValute();
-        Task<SResponse> InsertValuta(Valuta val);
-        Korisnik GetKorisnik(string korisnickoIme, string sifra);
+        SResponse<Market> GetMarket();
+        SResponse<List<Valuta>> GetValute();
+        Task<SResponse<Valuta>> InsertValuta(Valuta val);
+        Task<SResponse<Korisnik>> GetKorisnik(string korisnickoIme, string sifra);
         Task<SResponse> InsertKorisnik(Korisnik korisnik);
-        Task<Korisnik> InsertOrUpdateKorisnickeValute(IKorisnickaValuta k);
+        Task<SResponse> DeleteKorisnik(string user);
+        Task<SResponse<Korisnik>> InsertOrUpdateKorisnickeValute(IKorisnickaValuta k);
+        Task<SResponse<Korisnik>> TransferValuta(IKorisnickaValuta k);
         Task<SResponse> AddValutaToMarket(string ime);
         Task<SResponse> UpdateCena(Valuta val);
         Task<SResponse> UpdateKorisnik(Korisnik k);

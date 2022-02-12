@@ -10,6 +10,5 @@ namespace Marketstore.Core
     {
        IMongoDatabase GetDB();
        IMongoCollection<Market> GetMarketCollections();
-       IMongoCollection<Valuta> GetValutaCollections();
     }
 }

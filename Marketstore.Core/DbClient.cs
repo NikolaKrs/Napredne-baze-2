@@ -16,22 +16,22 @@ namespace Marketstore.Core
             var client = new MongoClient(dbSettings.Connection_String);
             db = client.GetDatabase(dbSettings.DB_Name);
             _market = db.GetCollection<Market>(dbSettings.Main_Collection);
+            CreateIndexes();
         }
-        public IMongoDatabase GetDB() 
-        {
-            return db;
+        private void CreateIndexes() {
+            var indexModel = new CreateIndexModel<Korisnik>(Builders<Korisnik>.IndexKeys.Ascending(x => x.korisnickoIme), new CreateIndexOptions { Unique = true });
+            var collectionuser = db.GetCollection<Korisnik>("Korisnici");
+            collectionuser.Indexes.CreateOne(indexModel);
+
+            var indexModelVal = new CreateIndexModel<Valuta>(Builders<Valuta>.IndexKeys.Ascending(x => x.ime), new CreateIndexOptions { Unique = true });
+            var collectionvalute = db.GetCollection<Valuta>("Valute");
+            collectionvalute.Indexes.CreateOne(indexModelVal);
         }
+        public IMongoDatabase GetDB() => db;
         /// <summary>
         /// Funkcija za dobijanje kolekcije marketa.
         /// </summary>
         /// <returns> IMongoCollection<Market> </returns>
-        public IMongoCollection<Market> GetMarketCollections()
-        {
-            return _market;
-        }
-        public IMongoCollection<Valuta> GetValutaCollections()
-        {
-            return db.GetCollection<Valuta>("Valute");
-        }
+        public IMongoCollection<Market> GetMarketCollections() => _market;
     }
 }

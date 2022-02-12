@@ -24,11 +24,11 @@ namespace Crypto_Server.Controllers
 
         [HttpGet]
         [Route("GetMarket")]
-        public IActionResult GetMarket() => Ok(_marketService.GetMarket());
+        public IActionResult GetMarket() => ParseResponse(_marketService.GetMarket());
 
         [HttpGet]
         [Route("GetValute")]
-        public IActionResult GetValute() => Ok(_marketService.GetValute());
+        public IActionResult GetValute() => ParseResponse(_marketService.GetValute());
 
         [HttpDelete]
         [Route("DeleteValute/{valuta}")]
@@ -36,15 +36,26 @@ namespace Crypto_Server.Controllers
 
         [HttpPost]
         [Route("GetUser")]
-        public IActionResult GetKorisnik([FromBody] IKorisnik korisnik) => Ok(_marketService.GetKorisnik(korisnik.korisnickoIme,korisnik.sifra));
+        public async Task<IActionResult> GetKorisnik([FromBody] IKorisnik korisnik)
+        {
+            return Ok(await _marketService.GetKorisnik(korisnik.korisnickoIme, korisnik.sifra));
+        }
 
         [HttpPost]
         [Route("InsertOrUpdateUserValute")]
-        public async Task<IActionResult> InsertOrUpdateUserValute([FromBody] IKorisnickaValuta k) => Ok(await _marketService.InsertOrUpdateKorisnickeValute(k));
+        public async Task<IActionResult> InsertOrUpdateUserValute([FromBody] IKorisnickaValuta k) => ParseResponse(await _marketService.InsertOrUpdateKorisnickeValute(k));
+
+        [HttpPost]
+        [Route("TransferValuta")]
+        public async Task<IActionResult> TransferValuta([FromBody] IKorisnickaValuta k) => ParseResponse(await _marketService.TransferValuta(k));
+
 
         [HttpPost]
         [Route("InsertUser")]
         public async Task<IActionResult> InesrtKorisnik([FromBody] Korisnik k) => ParseResponse(await _marketService.InsertKorisnik(k));
+        [HttpDelete]
+        [Route("DeleteUser/{user}")]
+        public async Task<IActionResult> DeleteKorisnik(string user) => ParseResponse(await _marketService.DeleteKorisnik(user));
 
         [HttpPost]
         [Route("InsertValute")]
@@ -88,7 +99,7 @@ namespace Crypto_Server.Controllers
             return Ok();
         }
 
-        private IActionResult ParseResponse(SResponse sr) => sr.valid ? Ok(sr.message) : BadRequest(sr.message);
+        private IActionResult ParseResponse(object sr) => Ok(sr);
 
     }
 }

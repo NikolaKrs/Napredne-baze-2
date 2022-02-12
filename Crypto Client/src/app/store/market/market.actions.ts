@@ -19,3 +19,10 @@ export const loadCoinsSuccess = createAction(
     coins: Valuta[];
   }>()
 );
+
+export const addCoin = createAction(
+  'Add coin success',
+  props<{
+    coin: Valuta;
+  }>()
+);

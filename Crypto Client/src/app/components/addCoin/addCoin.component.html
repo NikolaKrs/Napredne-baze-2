@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="addcoin">
+    <h1>Add coin</h1>
+    <div class="wrapper">
+      <input type="text" placeholder="ime" [(ngModel)]="coin.ime"/>
+    </div>
+    <div class="wrapper">
+      <input type="text" placeholder="punoime" [(ngModel)]="coin.punoime"  />
+    </div>
+    <div class="wrapper">
+      <input type="number" placeholder="cena" [(ngModel)]="coin.cena"  />
+    </div>
+    <div class="wrapper">
+      <input type="text" placeholder="slika" [(ngModel)]="coin.slika"  />
+    </div>
+    
+
+    <button class="loginbutton" (click)="addCoin()">Add</button>
+   </div>
+</div>
+

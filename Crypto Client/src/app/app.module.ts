@@ -26,6 +26,7 @@ import { SellComponent } from './components/sell/sell.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/register/register.component';
+import { AddCoinComponent } from './components/addCoin/addCoin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { RegisterComponent } from './components/register/register.component';
     TransferComponent,
     SellComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddCoinComponent
 
 
   ],

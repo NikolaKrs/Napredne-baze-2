@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { catchError, map, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Korisnik } from '../Models/Korisnik-model';
+import { SResponse } from '../Models/response';
 import { AppState } from '../store/app-state';
 import * as KorisnikActions from '../store/korisnik/korisnik.actions';
 
@@ -31,7 +32,7 @@ export class KorisnikService {
     console.log("stampam");
     const headers = { 'content-type': 'application/json'}  
     const body=JSON.stringify(korisnik);
-    return this.httpClient.post<Korisnik>(`${environment.api}/Crypto/InsertUser`,body,{'headers':headers}).pipe(
+    return this.httpClient.post<Korisnik| string>(`${environment.api}/Crypto/InsertUser`,body,{'headers':headers}).pipe(
       catchError(errorHandler)
     );
   }
@@ -44,13 +45,13 @@ export class KorisnikService {
     const headers = { 'content-type': 'application/json'}  
 
     const body=JSON.stringify({"korisnickoIme":username,"sifra":password});
-    return this.httpClient.post<any>(`${environment.api}/Crypto/GetUser`,body,{'headers':headers})
+    return this.httpClient.post<SResponse>(`${environment.api}/Crypto/GetUser`,body,{'headers':headers})
         .pipe(map(user => {
             // login successful if there's a jwt token in the response
-            if (user) 
+            if (user&& user.statuscode==200 &&user.obj) 
             {
                 // store user details and jwt token in local storage to keep user logged in between page refreshe
-                this.store.dispatch( KorisnikActions.loadUserSuccess({ korisnik: user }));
+                this.store.dispatch( KorisnikActions.loadUserSuccess({ korisnik: user.obj }));
             }
             return user;
         }));

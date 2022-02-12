@@ -16,5 +16,6 @@ export const marketReducer = createReducer(
   ),
   on(Actions.loadCoinsSuccess, (state, { coins }) =>({...state,market: {...state.market,coins:coins}})
   ),
+  on(Actions.addCoin, (state, { coin }) =>({...state, market:{...state.market, coins:[...state.market.coins,coin]} }))
   
 );

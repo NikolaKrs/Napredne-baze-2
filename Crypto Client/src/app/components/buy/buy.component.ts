@@ -53,7 +53,7 @@ export class BuyComponent implements OnInit {
       {
         this.router.navigate(["wallet"]);
         this.data= await firstValueFrom(this.store.pipe(select(selectUserId),take(1)));
-        this.service.buyCoin(this.value/this.valuta.coin.cena, this.valuta.coin.id, this.data).subscribe((val:any)=>
+        this.service.buyCoin(this.value/this.valuta.coin.cena+this.valuta.kolicina, this.valuta.coin.id, this.data).subscribe((val:any)=>
         console.log(val));
        
       }

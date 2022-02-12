@@ -1,6 +1,6 @@
 import { Valuta } from "./Valuta-model";
 
-export class KorisnikValuta
+export interface KorisnikValuta
 {
     valutaRef:string
     kolicina:number

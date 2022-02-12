@@ -3,11 +3,13 @@ import { Router } from '@angular/router';
 import {Location} from '@angular/common'
 import { Valuta } from 'src/app/Models/Valuta-model';
 import { selectCurrentCoin } from 'src/app/store/coin/coin.selectors';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/app-state';
-import { Subscription } from 'rxjs';
+import { firstValueFrom, Subscription, take } from 'rxjs';
 import * as market from 'src/app/services/market.service';
 import { CoinState } from 'src/app/store/coin/coin.reducer';
+import { SResponse } from 'src/app/Models/response';
+import { selectUserId } from 'src/app/store/korisnik/korisnik.selectors';
 
 @Component({
   selector: 'app-transfer',
@@ -39,14 +41,18 @@ export class TransferComponent implements OnInit {
   {
     this._location.back();
   }
-  buy()
+  async convert()
   {
-    this._location.back();
+    const data= await firstValueFrom(this.store.pipe(select(selectUserId),take(1)));
+    this.service.convertCoin(this.valuta.kolicina-this.value, this.valuta.coin.id,data,this.selected.ime,this.value*this.valuta.coin.cena/this.selected.cena).subscribe((val:any)=>
+    console.log(val));
+    this.router.navigate(["wallet"])
   }
   updatevalue()
   {
     if(this.value>this.valuta.kolicina-1)
     {
+      
       this.value=this.valuta.kolicina;
     }
   }
@@ -63,8 +69,8 @@ export class TransferComponent implements OnInit {
       console.log(val)
       });
 
-      this.service.getValuta().subscribe((val:Valuta[])=>{
-        this.valute=val;
+      this.service.getValuta().subscribe((val:SResponse)=>{
+        this.valute=val.obj;
         console.log(val)
       });
   }

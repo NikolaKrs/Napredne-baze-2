@@ -29,7 +29,8 @@ export class ValutaComponent implements OnInit {
  
   ngOnInit(): void
   {
-   
+    console.log("valuta")
+   console.log(this.valuta)
   }
   click()
   {
@@ -61,4 +62,5 @@ export class ValutaComponent implements OnInit {
     }
     this.router.navigate(["/transfer"])
   }
+  
 }

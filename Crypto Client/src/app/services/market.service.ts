@@ -8,6 +8,9 @@ import { Valuta } from '../Models/Valuta-model';
 import { Store } from '@ngrx/store';
 import { AppState } from '../store/app-state';
 import * as KorisnikActions from '../store/korisnik/korisnik.actions';
+import * as MarketAction from '../store/market/market.actions';
+import { SResponse } from '../Models/response';
+import { Korisnik } from '../Models/Korisnik-model';
 
 @Injectable({
   providedIn: 'root',
@@ -17,51 +20,91 @@ export class MarketService {
 
   public getMarket() {
     return this.httpClient
-      .get<Market>(`https://localhost:44318/Crypto/GetMarket`)
+      .get<SResponse>(`https://localhost:44318/Crypto/GetMarket`)
       .pipe(catchError(errorHandler));
   }
   public getValuta() {
     return this.httpClient
-      .get<Array<Valuta>>(`https://localhost:44318/Crypto/GetValute`)
+      .get<SResponse>(`https://localhost:44318/Crypto/GetValute`)
       .pipe(catchError(errorHandler));
   }
   public buyCoin(kolicina:number, valuta: string, id:string) {
     const headers = { 'content-type': 'application/json'}  
 
     const body=JSON.stringify({
-      "korisnik": id,
-      "valuta": valuta,
+      "korisnickoIme": id,
+      "valutaRef": valuta,
       "kolicina": kolicina
     });
-    return this.httpClient.post<any>(`${environment.api}/Crypto/InsertOrUpdateUserValute`,body,{'headers':headers})
+    return this.httpClient.post<SResponse>(`${environment.api}/Crypto/InsertOrUpdateUserValute`,body,{'headers':headers})
     .pipe(map(user => {
       // login successful if there's a jwt token in the response
-      if (user) 
+      if ( user&& user.statuscode==200 &&user.obj) 
       {
            // store user details and jwt token in local storage to keep user logged in between page refreshe
-          this.store.dispatch( KorisnikActions.loadUserSuccess({ korisnik: user }));
+          this.store.dispatch( KorisnikActions.loadUserSuccess({ korisnik: user.obj as Korisnik }));
       }
-      return user;
+      return user.obj;
   }));
   }
 
-  public putValute(valuta: Valuta) {
-    //UPDATE
-    const headers = { 'content-type': 'application/json' };
-    const body = JSON.stringify(valuta);
-    return this.httpClient.put<Valuta>(
-      environment.api + 'valute/' + valuta.id,
-      body,
-      { headers: headers }
-    );
+
+  public sellCoin(kolicina:number, valuta: string, id:string) {
+    const headers = { 'content-type': 'application/json'}  
+
+    const body=JSON.stringify({
+      "korisnickoIme": id,
+      "valutaRef": valuta,
+      "kolicina": kolicina
+    });
+    return this.httpClient.post<SResponse>(`${environment.api}/Crypto/InsertOrUpdateUserValute`,body,{'headers':headers})
+    .pipe(map(user => {
+      // login successful if there's a jwt token in the response
+      if ( user&& user.statuscode==200 &&user.obj) 
+      {
+           // store user details and jwt token in local storage to keep user logged in between page refreshe
+          this.store.dispatch( KorisnikActions.loadUserSuccess({ korisnik: user.obj as Korisnik }));
+      }
+      return user.obj;
+  }));
   }
 
-  public insertValute(valuta: Valuta) {
+  public convertCoin(kolicina:number, valuta: string, id:string,valutaTransfer:string,kolicinaTransfer:number) {
+    //UPDATE
+    const headers = { 'content-type': 'application/json' };
+    const body=JSON.stringify({
+      "korisnickoIme": id,
+      "valutaRef": valuta,
+      "kolicina": kolicina,
+      "valutaTransfer": valutaTransfer,
+      "kolicinaTransfer": kolicinaTransfer
+    });
+    return this.httpClient.post<SResponse>(`${environment.api}/Crypto/TransferValuta`,body,
+      { headers: headers }
+    )
+    .pipe(map(user => {
+      // login successful if there's a jwt token in the response
+      if ( user&& user.statuscode==200 &&user.obj) 
+      {
+           // store user details and jwt token in local storage to keep user logged in between page refreshe
+          this.store.dispatch( KorisnikActions.loadUserSuccess({ korisnik: user.obj as Korisnik }));
+      }
+      return user.obj;
+  }));
+  }
+
+  public insertCoin(valuta: Valuta) {
     const headers = { 'content-type': 'application/json' };
     const body = JSON.stringify(valuta);
-    return this.httpClient.post<Valuta>(environment.api + 'valute/', body, {
+    return this.httpClient.post<SResponse>(`${environment.api}/Crypto/InsertValute`, body, {
       headers: headers,
-    });
+    }) .pipe(map(coin => {
+      if ( coin&& coin.statuscode==200 &&coin.obj) 
+      {     
+          this.store.dispatch( MarketAction.addCoin({ coin: coin.obj as Valuta }));
+      }
+      return coin;
+  }));
   }
 
   public deleteValuta(id: number) {

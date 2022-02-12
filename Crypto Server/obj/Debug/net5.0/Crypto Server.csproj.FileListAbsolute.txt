@@ -1,159 +1,55 @@
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\appsettings.Development.json
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\appsettings.json
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.exe
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.deps.json
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.runtimeconfig.json
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.runtimeconfig.dev.json
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\ref\Crypto Server.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.pdb
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\DnsClient.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Microsoft.OpenApi.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\MongoDB.Bson.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\MongoDB.Driver.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\MongoDB.Driver.Core.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\SharpCompress.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\linux\native\libsnappy64.so
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\linux\native\libzstd.so
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\osx\native\libsnappy64.dylib
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\osx\native\libzstd.dylib
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\win\native\libzstd.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\win\native\snappy32.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Marketstore.Core.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Marketstore.Core.pdb
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.csprojAssemblyReference.cache
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.GeneratedMSBuildEditorConfig.editorconfig
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.AssemblyInfoInputs.cache
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.AssemblyInfo.cs
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.csproj.CoreCompileInputs.cache
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.MvcApplicationPartsAssemblyInfo.cs
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.MvcApplicationPartsAssemblyInfo.cache
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\staticwebassets\Crypto Server.StaticWebAssets.Manifest.cache
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\staticwebassets\Crypto Server.StaticWebAssets.xml
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\scopedcss\bundle\Crypto Server.styles.css
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.RazorTargetAssemblyInfo.cache
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.csproj.CopyComplete
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.dll
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\ref\Crypto Server.dll
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.pdb
-D:\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.genruntimeconfig.cache
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\System.Text.Encodings.Web.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\System.Text.Json.dll
-D:\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Newtonsoft.Json.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\appsettings.Development.json
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\appsettings.json
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.StaticWebAssets.xml
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.exe
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.deps.json
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.runtimeconfig.json
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.runtimeconfig.dev.json
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\ref\Crypto Server.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.pdb
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\DnsClient.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Microsoft.OpenApi.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\MongoDB.Bson.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\MongoDB.Driver.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\MongoDB.Driver.Core.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Newtonsoft.Json.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\SharpCompress.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\System.Text.Encodings.Web.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\System.Text.Json.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\linux\native\libsnappy64.so
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\linux\native\libzstd.so
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\osx\native\libsnappy64.dylib
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\osx\native\libzstd.dylib
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\win\native\libzstd.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\win\native\snappy32.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Marketstore.Core.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Marketstore.Core.pdb
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.csproj.AssemblyReference.cache
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.GeneratedMSBuildEditorConfig.editorconfig
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.AssemblyInfoInputs.cache
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.AssemblyInfo.cs
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.csproj.CoreCompileInputs.cache
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.MvcApplicationPartsAssemblyInfo.cs
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.MvcApplicationPartsAssemblyInfo.cache
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\scopedcss\bundle\Crypto Server.styles.css
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\staticwebassets\Crypto Server.StaticWebAssets.Manifest.cache
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.RazorTargetAssemblyInfo.cache
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.csproj.CopyComplete
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\ref\Crypto Server.dll
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.pdb
-E:\Godina 4\NBP\NBPGit\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.genruntimeconfig.cache
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\appsettings.Development.json
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\appsettings.json
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.exe
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.deps.json
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.runtimeconfig.json
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.runtimeconfig.dev.json
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\ref\Crypto Server.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Crypto Server.pdb
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\DnsClient.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\MongoDB.Bson.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\MongoDB.Driver.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\MongoDB.Driver.Core.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Newtonsoft.Json.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\SharpCompress.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\System.Text.Encodings.Web.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\System.Text.Json.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\linux\native\libsnappy64.so
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\linux\native\libzstd.so
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\osx\native\libsnappy64.dylib
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\osx\native\libzstd.dylib
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\win\native\libzstd.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\win\native\snappy32.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Marketstore.Core.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\bin\Debug\net5.0\Marketstore.Core.pdb
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.csproj.AssemblyReference.cache
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.AssemblyInfoInputs.cache
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.AssemblyInfo.cs
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.csproj.CoreCompileInputs.cache
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\staticwebassets\Crypto Server.StaticWebAssets.Manifest.cache
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\staticwebassets\Crypto Server.StaticWebAssets.xml
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\scopedcss\bundle\Crypto Server.styles.css
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.RazorTargetAssemblyInfo.cache
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\ref\Crypto Server.dll
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.pdb
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.genruntimeconfig.cache
-C:\Users\Nikola Petrovic\Desktop\NBP2021\proba\proj4\Napredne-baze-2\Crypto Server\obj\Debug\net5.0\Crypto Server.csproj.CopyComplete
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\appsettings.Development.json
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\appsettings.json
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\Crypto Server.exe
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\Crypto Server.deps.json
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\Crypto Server.runtimeconfig.json
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\Crypto Server.runtimeconfig.dev.json
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\Crypto Server.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\ref\Crypto Server.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\Crypto Server.pdb
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\DnsClient.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\MongoDB.Bson.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\MongoDB.Driver.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\MongoDB.Driver.Core.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\SharpCompress.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\System.Text.Encodings.Web.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\System.Text.Json.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\runtimes\linux\native\libsnappy64.so
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\runtimes\linux\native\libzstd.so
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\runtimes\osx\native\libsnappy64.dylib
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\runtimes\osx\native\libzstd.dylib
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\runtimes\win\native\libzstd.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\runtimes\win\native\snappy32.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\Marketstore.Core.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\bin\Debug\net5.0\Marketstore.Core.pdb
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\obj\Debug\net5.0\Crypto Server.csproj.AssemblyReference.cache
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\obj\Debug\net5.0\Crypto Server.GeneratedMSBuildEditorConfig.editorconfig
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\obj\Debug\net5.0\Crypto Server.AssemblyInfoInputs.cache
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\obj\Debug\net5.0\Crypto Server.AssemblyInfo.cs
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\obj\Debug\net5.0\Crypto Server.csproj.CoreCompileInputs.cache
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\obj\Debug\net5.0\Crypto Server.MvcApplicationPartsAssemblyInfo.cs
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\obj\Debug\net5.0\Crypto Server.MvcApplicationPartsAssemblyInfo.cache
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\obj\Debug\net5.0\scopedcss\bundle\Crypto Server.styles.css
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\obj\Debug\net5.0\staticwebassets\Crypto Server.StaticWebAssets.Manifest.cache
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\obj\Debug\net5.0\Crypto Server.RazorTargetAssemblyInfo.cache
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\obj\Debug\net5.0\Crypto Server.csproj.CopyComplete
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\obj\Debug\net5.0\Crypto Server.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\obj\Debug\net5.0\ref\Crypto Server.dll
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\obj\Debug\net5.0\Crypto Server.pdb
+D:\bytechCloud\ByTech\.Net+MongoDB\Crypto Server\obj\Debug\net5.0\Crypto Server.genruntimeconfig.cache
 E:\NBPGit\projekat\Crypto Server\bin\Debug\net5.0\appsettings.Development.json
 E:\NBPGit\projekat\Crypto Server\bin\Debug\net5.0\appsettings.json
-E:\NBPGit\projekat\Crypto Server\bin\Debug\net5.0\Crypto Server.StaticWebAssets.xml
 E:\NBPGit\projekat\Crypto Server\bin\Debug\net5.0\Crypto Server.exe
 E:\NBPGit\projekat\Crypto Server\bin\Debug\net5.0\Crypto Server.deps.json
 E:\NBPGit\projekat\Crypto Server\bin\Debug\net5.0\Crypto Server.runtimeconfig.json

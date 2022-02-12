@@ -6,7 +6,7 @@
   </div>
   <div class="wrapper">
     <button class="plusminus" (click)="handleMinus()">-</button>
-    <input type="number" class="num" value={{value}}/>
+    <input type="number" class="num" value={{value}}  [(ngModel)]="value"/>
     <span>USD</span>
     <button class="plusminus"  (click)="handlePlus()">+</button>
   </div>

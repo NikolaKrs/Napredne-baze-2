@@ -12,6 +12,7 @@ namespace Marketstore.Models
     public class Valuta : MongoModel
     {
         public string ime { get; set; }
+        public string punoime { get; set; }
         public double cena { get; set; }
         public double rast { get; set; }
         public string slika { get; set; }

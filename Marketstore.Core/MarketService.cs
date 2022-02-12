@@ -34,15 +34,15 @@ namespace Marketstore.Core
             ///
             /// </summary>
             /// <returns>Objekat klase Market</returns>
-            public Market GetMarket()
+            public SResponse<Market> GetMarket()
             {
-                _market.valuteList = _market.valute.Select(x => refToObject<Valuta>(x)).ToList();
-                return _market;
+                _market.valuteList = _market.valute.Select(x => refToObject<Valuta>(x)).ToList().FindAll(x=> x != null);
+                return new SResponse<Market>(true,"Uspesno pronadjen market.",_market);
             }
             public async Task<SResponse> AddValutaToMarket(string ime)
             {
                 var collectionValute = _db.GetCollection<Valuta>("Valute");
-                var valuta = collectionValute.Find(x => x.ime == ime || x.Id == ime).FirstOrDefault();
+                var valuta = collectionValute.Find(x => x.ime == ime).FirstOrDefault();
 
                 if (valuta == null)
                     return new SResponse(false, $"Valuta pod imenom {ime} ne postoji.");
@@ -62,32 +62,34 @@ namespace Marketstore.Core
             /// 
             /// </summary>
             /// <returns>Lista objekata tima Valuta</returns>
-            public List<Valuta> GetValute()
+            public SResponse<List<Valuta>> GetValute()
             {
-                return _market.valute.Select(x => refToObject<Valuta>(x)).ToList();
+                return new SResponse<List<Valuta>>(true,"Uspesno pribavljene valute.", _market.valute.Select(x => refToObject<Valuta>(x)).ToList());
             }
-            public async Task<SResponse> InsertValuta(Valuta val)
+            public async Task<SResponse<Valuta>> InsertValuta(Valuta val)
             {
                 var collectionValute = _db.GetCollection<Valuta>("Valute");
                 var valuta = collectionValute.Find(x => x.ime == val.ime).FirstOrDefault();
 
                 if (valuta != null)
-                    return new SResponse(false, $"Valuta {val.ime} vec postoji u bazi.");
+                    return new SResponse<Valuta>(false, $"Valuta {val.ime} vec postoji u bazi.");
 
                 await collectionValute.InsertOneAsync(val);
-                return new SResponse(true, $"Valuta {val.ime} uspesno dodata.");
+                await AddValutaToMarket(val.ime);
+                valuta = collectionValute.Find(x => x.ime == val.ime).FirstOrDefault();
+                return new SResponse<Valuta>(true, $"Valuta {val.ime} uspesno dodata.",valuta);
             }
             public async Task<SResponse> DeleteValuta(string val)
             {
                 var collectionValute = _db.GetCollection<Valuta>("Valute");
                 var valuta = collectionValute.Find(x => x.ime == val).FirstOrDefault();
 
-                if (valuta != null)
-                    return new SResponse(false, $"Valuta {val} vec postoji u bazi.");
+                if (valuta == null)
+                    return new SResponse(false, $"Valuta {val} ne postoji u bazi.");
 
                 var f = Builders<Valuta>.Filter.Eq(x => x.Id, valuta.Id);
                 await collectionValute.DeleteOneAsync(f);
-                return new SResponse(true, $"Valuta {val} uspesno dodata.");
+                return new SResponse(true, $"Valuta {val} uspesno obrisana.");
             }
             public async Task<SResponse> UpdateCena(Valuta val) 
             {
@@ -105,9 +107,13 @@ namespace Marketstore.Core
         #endregion
 
         #region Korisnici
-            public Korisnik GetKorisnik(string korisnickoIme, string sifra) 
+            public async Task<SResponse<Korisnik>> GetKorisnik(string korisnickoIme, string sifra) 
             {
-                return  _db.GetCollection<Korisnik>("Korisnici").Find(x => x.korisnickoIme.Equals(korisnickoIme) && x.sifra.Equals(sifra)).FirstOrDefault() ?? null;
+                var korisnik = (await _db.GetCollection<Korisnik>("Korisnici").FindAsync(x => x.korisnickoIme.Equals(korisnickoIme) && x.sifra.Equals(sifra))).FirstOrDefault();
+                if(korisnik == null)
+                    return new SResponse<Korisnik>(false, "Korisnik nije pronadjen.");
+                else
+                    return new SResponse<Korisnik>(true, $"Korisnik {korisnik.korisnickoIme} uspesno pronadjen.", korisnik);
             }
             public async Task<SResponse> InsertKorisnik(Korisnik korisnik)
             {
@@ -121,24 +127,26 @@ namespace Marketstore.Core
                     return new SResponse(true, $"Uspesno dadat korisnik: {korisnik.korisnickoIme}");
                 }  
             }
-            public async Task<Korisnik> InsertOrUpdateKorisnickeValute(IKorisnickaValuta k)
+            public async Task<SResponse<Korisnik>> InsertOrUpdateKorisnickeValute(IKorisnickaValuta k)
             {
                 var collectionValute = _db.GetCollection<Valuta>("Valute");
                 var collectionKorisnik = _db.GetCollection<Korisnik>("Korisnici");
 
-                var korisnik = collectionKorisnik.Find(x => x.korisnickoIme == k.korisnik ).FirstOrDefault();
-                var valuta = collectionValute.Find(x => x.Id == k.valuta || x.ime == k.valuta).FirstOrDefault();
+                var korisnik = collectionKorisnik.Find(x => x.Id == k.Id || x.korisnickoIme == k.korisnickoIme ).FirstOrDefault();
+                var valuta = collectionValute.Find(x => x.ime == k.valutaIme || x.Id == k.valutaRef).FirstOrDefault();
 
                 if (korisnik == null)
-                    return null;
+                    return new SResponse<Korisnik>(false,"Korisnik nije pronadjen.");
                 else if(valuta == null)
-                    return null;
+                    return new SResponse<Korisnik>(false, "Valuta nije pronadjena.");
 
                 var kvalutaid = korisnik.korisnickeValute.FindIndex(x => x.valutaRef == valuta.Id);
 
                 if (kvalutaid >= 0)//Valuta postoji 
                 {
-                    korisnik.korisnickeValute[kvalutaid].kolicina = korisnik.korisnickeValute[kvalutaid].kolicina+k.kolicina;
+                    korisnik.korisnickeValute[kvalutaid].kolicina = k.kolicina;
+                    if (k.kolicina == 0)
+                        korisnik.korisnickeValute.RemoveAt(kvalutaid);
                 }
                 else
                 {
@@ -148,12 +156,54 @@ namespace Marketstore.Core
                 var f = Builders<Korisnik>.Filter.Eq(x => x.Id, korisnik.Id);
                 var u = Builders<Korisnik>.Update.Set("korisnickeValute", korisnik.korisnickeValute);
                 await collectionKorisnik.UpdateOneAsync(f, u);
-                return korisnik;
+                return new SResponse<Korisnik>(true, $"Valuta uspesno dodata korisniku {korisnik.korisnickoIme}", korisnik);
             }
+            public async Task<SResponse<Korisnik>> TransferValuta(IKorisnickaValuta k)
+            {
+                var collectionValute = _db.GetCollection<Valuta>("Valute");
+                var collectionKorisnik = _db.GetCollection<Korisnik>("Korisnici");
+
+                var korisnik = collectionKorisnik.Find(x => x.Id == k.Id || x.korisnickoIme == k.korisnickoIme).FirstOrDefault();
+                var valuta = collectionValute.Find(x => x.ime == k.valutaIme || x.Id == k.valutaRef).FirstOrDefault();
+                var valutaTransfer = collectionValute.Find(x => x.ime == k.valutaTransfer || x.Id == k.valutaTransferRef).FirstOrDefault();
+
+            if (korisnik == null)
+                    return new SResponse<Korisnik>(false, "Korisnik nije pronadjen.");
+            else if (valuta == null)
+                    return new SResponse<Korisnik>(false, "Valuta nije pronadjena.");
+            else if (valutaTransfer == null)
+                return new SResponse<Korisnik>(false, "Valuta za transfer nije pronadjena.");
+
+             
+            var kvalutaid = korisnik.korisnickeValute.FindIndex(x => x.valutaRef == valuta.Id);
+            var kvalutaTransferid = korisnik.korisnickeValute.FindIndex(x => x.valutaRef == valutaTransfer.Id);
+
+            if (kvalutaid >= 0)//Valuta postoji 
+            {
+                korisnik.korisnickeValute[kvalutaid].kolicina = k.kolicina;
+                if (k.kolicina == 0)
+                    korisnik.korisnickeValute.RemoveAt(kvalutaid);
+            }
+            if (kvalutaTransferid >= 0)//Valuta postoji 
+            {
+                korisnik.korisnickeValute[kvalutaTransferid].kolicina = korisnik.korisnickeValute[kvalutaTransferid].kolicina+ k.kolicinaTransfer;
+            }
+            else
+            {
+                KorisnickaValuta value = new KorisnickaValuta { valutaRef = valutaTransfer.Id, kolicina = k.kolicinaTransfer };
+                korisnik.korisnickeValute.Add(value);
+            }
+            var f = Builders<Korisnik>.Filter.Eq(x => x.Id, korisnik.Id);
+            var u = Builders<Korisnik>.Update.Set("korisnickeValute", korisnik.korisnickeValute);
+            await collectionKorisnik.UpdateOneAsync(f, u);
+            return new SResponse<Korisnik>(true, $"Valuta uspesno dodata korisniku {korisnik.korisnickoIme}", korisnik);
+        }
+
+
             public async Task<SResponse> UpdateKorisnik(Korisnik k)
             {
                 var collectionKorisnik = _db.GetCollection<Korisnik>("Korisnici");
-                var korisnik = collectionKorisnik.Find(x => x.Id == k.Id || x.ime == k.ime).FirstOrDefault();
+                var korisnik = collectionKorisnik.Find(x => (x.Id == k.Id || x.korisnickoIme == k.korisnickoIme)).FirstOrDefault();
                 if (korisnik == null)
                     return new SResponse(false, $"Korisnik {k.Id} nije pronadjen.");
 
@@ -171,7 +221,19 @@ namespace Marketstore.Core
 
                 return new SResponse(true, "Korisnik uspesno azuriran.");
             }
+            public async Task<SResponse> DeleteKorisnik(string user)
+            {
+                var collectionKorisnik = _db.GetCollection<Korisnik>("Korisnici");
+                var korisnik = collectionKorisnik.Find(x => x.korisnickoIme == user).FirstOrDefault();
+                if (korisnik == null)
+                    return new SResponse(false, $"Korisnik {user} nije pronadjen.");
+
+                var f = Builders<Korisnik>.Filter.Eq(x => x.Id, korisnik.Id);
+                await collectionKorisnik.DeleteOneAsync(f);
+                return new SResponse(true, $"Korisnik {korisnik.korisnickoIme} uspesno obisan.");
+            }
+
         #endregion
-       
+
     }
 }

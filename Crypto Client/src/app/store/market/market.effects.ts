@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { MarketService } from 'src/app/services/market.service';
 import { of } from 'rxjs';
-import { catchError, map, mergeMap, take } from 'rxjs/operators';
+import { catchError, filter, map, mergeMap, take } from 'rxjs/operators';
 
 import * as MarketActions from './market.actions';
+import { Valuta } from 'src/app/Models/Valuta-model';
 
 @Injectable()
 export class MarketEffect {
@@ -21,8 +22,10 @@ export class MarketEffect {
           .getMarket()
 
           .pipe(
+            filter(market=>market.obj != null),
             map((market) =>
-              MarketActions.loadMarketSuccess({ market: market })
+            
+              MarketActions.loadMarketSuccess({ market: market.obj })
             ),
             catchError(() => of({ type: 'load error' }))
           )
@@ -38,9 +41,9 @@ export class MarketEffect {
       this.marketService
         .getValuta()
 
-        .pipe(
+        .pipe(  filter(market=>market.obj != null),
           map((coins) =>
-            MarketActions.loadCoinsSuccess({ coins: coins })
+            MarketActions.loadCoinsSuccess({ coins: coins.obj as Valuta[] })
           ),
           catchError(() => of({ type: 'load error' }))
         )
